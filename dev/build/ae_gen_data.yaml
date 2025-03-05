@@ -1,0 +1,212 @@
+id: CSR-2023-12-001
+name: Clinical Study Report
+mainListOfContents:
+  contentsList:
+    listItems:
+      - analysisId: AN-1001
+        level: 1
+        order: 1
+        name: Analysis 1
+      - analysisId: AN-1002
+        level: 1
+        order: 2
+        name: Analysis 2
+      - outputId: CSR-2023-12-001
+        level: 1
+        order: 3
+        name: Output 1
+  name: Main List of Contents
+version: 1
+referenceDocuments:
+  - id: SAP-2023-06-001
+    name: Statistical Analysis Plan
+    location: SAP-2023-06-001.pdf
+  - id: sas-program
+    name: SAS Program
+    location: csr-program.sas
+analysisSets:
+  - id: AS-ITT
+    name: Intent-to-Treat Population
+    condition:
+      dataset: ADSL
+      variable: ITTFL
+      comparator: EQ
+      value: [ Y ]
+    level: 1
+    order: 1
+analysisGroupings:
+  - id: AG-TRT
+    name: Treatment Group
+    groupingDataset: ADSL
+    groupingVariable: TRT01A
+    dataDriven: false
+    groups:
+      - id: AG-TRT-A
+        name: Treatment A
+        condition:
+          dataset: ADSL
+          variable: TRT01A
+          comparator: EQ
+          value: [ A ]
+        level: 1
+        order: 1
+      - id: AG-TRT-B
+        name: Treatment B
+        condition:
+          dataset: ADSL
+          variable: TRT01A
+          comparator: EQ
+          value: [ B ]
+        level: 1
+        order: 2
+      - id: AG-TRT-P
+        name: Placebo
+        condition:
+          dataset: ADSL
+          variable: TRT01A
+          comparator: EQ
+          value: [ P ]
+        level: 1
+        order: 3
+  - id: AG-SEX
+    name: Sex
+    groupingDataset: ADSL
+    groupingVariable: SEX
+    dataDriven: false
+    groups:
+      - id: AG-SEX-M
+        name: Male
+        condition:
+          dataset: ADSL
+          variable: SEX
+          comparator: EQ
+          value: [ M ]
+        level: 1
+        order: 1
+      - id: AG-SEX-F
+        name: Female
+        condition:
+          dataset: ADSL
+          variable: SEX
+          comparator: EQ
+          value: [ F ]
+        level: 1
+        order: 2
+methods:
+  - id: AM-1001
+    name: N
+    documentRefs:
+      - referenceDocumentId: SAP-2023-06-001
+        pageRefs:
+          - ref_type: PhysicalRef  # Removed PageNumberListRef
+            pageNumbers: [10]
+    operations:
+      - id: OP-1001
+        name: Count
+        order: 1
+        resultPattern: XX
+    codeTemplate:
+      context: SAS 9.4
+      code: N = length(TRIM(dataset))
+  - id: AM-1002
+    name: Mean
+    documentRefs:
+      - referenceDocumentId: SAP-2023-06-001
+        pageRefs:
+          - ref_type: PhysicalRef  # Removed PageNumberListRef
+            pageNumbers: [11]
+    operations:
+      - id: OP-2001
+        name: Sum
+        order: 1
+        resultPattern: XX.X
+      - id: OP-2002
+        name: N
+        order: 2
+        referencedOperationRelationships:
+          - id: ORR-2001
+            referencedOperationRole:
+              controlled_term: "DENOMINATOR"  # Removed OperationRole
+            operationId: OP-2001
+        resultPattern: XX
+    codeTemplate:
+      context: SAS 9.4
+      code: SUM = sum(of variable); N = length(TRIM(dataset))
+analyses:
+  - id: AN-1001
+    name: Number of Subjects by Treatment and Sex
+    reason:
+      controlled_term: SPECIFIED_IN_SAP  # Removed AnalysisReason
+    purpose:
+      controlled_term: SECONDARY_OUTCOME_MEASURE  # Removed AnalysisPurpose
+    documentRefs:
+      - referenceDocumentId: SAP-2023-06-001
+        pageRefs:
+          - ref_type: PhysicalRef  # Removed PageNumberListRef
+            pageNumbers: [15]
+    dataset: ADSL
+    analysisSetId: AS-ITT
+    orderedGroupings:
+      - groupingId: AG-TRT
+        order: 1
+        resultsByGroup: true
+      - groupingId: AG-SEX
+        order: 2
+        resultsByGroup: true
+    methodId: AM-1001
+    programmingCode:
+      context: SAS 9.4
+      code: proc sql; select TRT01A, count(*) as N from ADSL where ITTFL='Y' group by TRT01A; quit;
+  - id: AN-1002
+    name: Mean Age by Treatment
+    reason:
+      controlled_term: SPECIFIED_IN_SAP  # Removed AnalysisReason
+    purpose:
+      controlled_term: SECONDARY_OUTCOME_MEASURE  # Removed AnalysisPurpose
+    documentRefs:
+      - referenceDocumentId: SAP-2023-06-001
+        pageRefs:
+          - ref_type: PhysicalRef  # Removed PageNumberListRef
+            pageNumbers: [16]
+    dataset: ADSL
+    variable: AGE
+    analysisSetId: AS-ITT
+    orderedGroupings:
+      - groupingId: AG-TRT
+        order: 1
+        resultsByGroup: true
+    methodId: AM-1002
+    programmingCode:
+      context: SAS 9.4
+      code: proc sql; select TRT01A, mean(AGE) as MEAN from ADSL where ITTFL='Y' group by TRT01A; quit;
+outputs:
+  - id: CSR-2023-12-001
+    name: CSR Output
+    fileSpecifications:
+      - name: CSR-2023-12-001.pdf
+        fileType:
+          controlled_term: pdf  # Removed OutputFileType
+        location: CSR-2023-12-001.pdf
+    displays:
+      - order: 1
+        display:
+          id: DS-1001
+          name: Number of Subjects by Treatment and Sex
+          displayTitle: "Table 1.0: Number of Subjects by Treatment and Sex"
+          displaySections:
+            - sectionType: Title
+              orderedSubSections:
+                - order: 1
+                  subSection:
+                    id: DSS-1001
+                    text: Table 1.0
+                - order: 2
+                  subSection:
+                    id: DSS-1002
+                    text: Number of Subjects by Treatment and Sex
+            - sectionType: Footnote
+              orderedSubSections:
+                - order: 1
+                  subSection:
+                    id: DSS-2001
+                    text: '*ITT Population'

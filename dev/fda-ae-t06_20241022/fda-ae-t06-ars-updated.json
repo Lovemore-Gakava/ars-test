@@ -1,0 +1,511 @@
+{
+  "name": "Overview of Adverse Events",
+  "id": "FDA-AE-T06",
+  "version": 1,
+  "description": "An adverse event (AE) is any untoward medical occurrence in a patient or clinical investigation subject administered a pharmaceutical product and which does not necessarily have a causal relationship with this treatment. An AE can therefore be any unfavorable and unintended sign (including an abnormal laboratory finding), symptom, or disease temporally associated with the use of a medicinal (investigational) product, whether or not related to the medicinal (investigational) product. [ICH E2]",
+  "mainListOfContents": {
+    "name": "List of Planned Analyses",
+    "label": "LOPA",
+    "contentsList": {
+      "listItems": [
+        {
+          "name": "Overview of Adverse Events",
+          "level": 1,
+          "order": 1,
+          "outputId": "Out_04",
+          "sublist": {
+            "listItems": [
+              {
+                "name": "Summary of Subjects by Treatment",
+                "level": 2,
+                "order": 1,
+                "analysisId": "An_30"
+              },
+              {
+                "name": "SAE [3]",
+                "level": 2,
+                "order": 2,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with any SAE by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_31"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_32"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_32_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Results in Death",
+                "level": 2,
+                "order": 3,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with any SAE that Results in Death by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_33"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that Results in Death, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_34"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that Results in Death, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_34_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Is Life Threatening",
+                "level": 2,
+                "order": 4,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with any SAE that Is Life Threatening by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_35"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that Is Life Threatening, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_36"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that Is Life Threatening, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_36_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Requires or Prolongs Hospitalization",
+                "level": 2,
+                "order": 5,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with any SAE that Requires or Prolongs Hospitalization by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_37"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that Requires or Prolongs Hospitalization, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_38"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that Requires or Prolongs Hospitalization, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_38_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Persist or Significant Disability/Incapacity",
+                "level": 2,
+                "order": 6,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with any SAE that Persist or Significant Disability/Incapacity by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_39"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that involves Persist or Significant Disability/Incapacity, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_40"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that involves Persist or Significant Disability/Incapacity, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_40_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Congenital Anomaly or Birth Defect",
+                "level": 2,
+                "order": 7,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with any SAE that involves Congenital Anomaly or Birth Defect by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_41"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that involves Congenital Anomaly or Birth Defect, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_42"
+                    },
+                    {
+                      "name": "Comparison of subjects with any SAE that involves Congenital Anomaly or Birth Defect, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_42_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Other",
+                "level": 2,
+                "order": 8,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with any Other SAE by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_43"
+                    },
+                    {
+                      "name": "Comparison of subjects with any Other SAE, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_44"
+                    },
+                    {
+                      "name": "Comparison of subjects with any Other SAE, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_44_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "AE leading to permanent discontinuation of study drug",
+                "level": 2,
+                "order": 9,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with AE leading to permanent discontinuation of study drug, by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_45"
+                    },
+                    {
+                      "name": "Comparison of subjects with AE leading to permanent discontinuation of study drug, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_46"
+                    },
+                    {
+                      "name": "Comparison of subjects with AE leading to permanent discontinuation of study drug, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_46_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "AE leading to dose modification of study drug",
+                "level": 2,
+                "order": 10,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with AE leading to dose modification of study drug, by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_47"
+                    },
+                    {
+                      "name": "Comparison of subjects with AE leading to dose modification of study drug, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_48"
+                    },
+                    {
+                      "name": "Comparison of subjects with AE leading to dose modification of study drug, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_48_1"
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "Any AE [4]",
+                "level": 2,
+                "order": 11,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Summary of subjects with Any AE by Treatment",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An_49"
+                    },
+                    {
+                      "name": "Comparison of subjects with Any AE, Xanomeline Low Dose vs Placebo",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An_50"
+                    },
+                    {
+                      "name": "Comparison of subjects with Any AE, Xanomeline High Dose vs Placebo",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An_50_1"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "otherListsOfContents": [
+    {
+      "name": "List of Planned Outputs",
+      "label": "LOPO",
+      "contentsList": {
+        "listItems": [
+          {
+            "name": "Overview of Adverse Events",
+            "level": 1,
+            "order": 1,
+            "outputId": "Out_04"
+          }
+        ]
+      }
+    }
+  ],
+  "terminologyExtensions": [
+    {
+      "id": "TermEx01",
+      "sponsorTerms": [
+        {
+          "id": "TermEx01_01",
+          "submissionValue": "POPULATION SUMMARY",
+          "description": "Summary statistics describing the study population(s)."
+        }
+      ],
+      "enumeration": "AnalysisPurposeEnum"
+    }
+  ],
+  "analysisOutputCategorizations": [
+    {
+      "id": "ANSET",
+      "categories": [
+        {
+          "id": "ANSET_01",
+          "label": "Safety",
+          "subCategorizations": [
+            {
+              "id": "ANSET_01_ANINT",
+              "categories": [
+                {
+                  "id": "ANSET_01_ANINT_05",
+                  "label": "Adverse Events"
+                }
+              ],
+              "label": "Safety Analysis Of Interest"
+            }
+          ]
+        }
+      ],
+      "label": "Analysis Sets"
+    }
+  ],
+  "analysisSets": [
+    {
+      "name": "Safety Population",
+      "description": "All patients randomized and known to have taken at least one dose of randomized drug.",
+      "id": "AnalysisSet_01",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADSL",
+        "variable": "SAFFL",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    }
+  ],
+  "dataSubsets": [
+    {
+      "name": "Any SAE",
+      "label": "SAE [3]",
+      "id": "Dss_07",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADAE",
+        "variable": "AESER",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "SAE that Results in Death",
+      "label": "Results in Death",
+      "id": "Dss_08",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADAE",
+        "variable": "AESDTH",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "SAE that Is Life Threatening",
+      "label": "Is Life Threatening",
+      "id": "Dss_09",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADAE",
+        "variable": "AESLIFE",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "SAE that Requires or Prolongs Hospitalization",
+      "label": "Requires or Prolongs Hospitalization",
+      "id": "Dss_10",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADAE",
+        "variable": "AESHOSP",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "SAE that involves Persist or Significant Disability / Incapacity",
+      "label": "Persist or Significant Disability / Incapacity",
+      "id": "Dss_11",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADAE",
+        "variable": "AESDISAB",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "SAE that involves Congenital Anomaly or Birth Defect",
+      "label": "Congenital Anomaly or Birth Defect",
+      "id": "Dss_12",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADAE",
+        "variable": "AESCONG",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "name": "Other SAE",
+      "label": "Other [4]",
+      "id": "Dss_13",
+      "level": 1,
+      "order": 1,
+      "compoundExpression": {
+        "logicalOperator": "OR",
+        "whereClauses": [
+          {
+            "level": 2,
+            "order": 1,
+            "condition": {
+              "dataset": "ADAE",
+              "variable": "AESMIE",
+              "comparator": "EQ",
+              "value": [
+                "Y"
+              ]
+            }
+          },
+          {
+            "level": 2,
+            "order": 2,
+            "condition": {
+              "dataset": "ADAE",
+              "variable": "AESCAN",
+              "comparator": "EQ",
+              "value": [
+                "Y"
+              ]
+            }
+          },
+          {
+            "level": 2,
+            "order": 3,
+            "condition": {
+              "dataset": "ADAE",
+              "variable": "AESOD",
+              "comparator": "EQ",
+              "value": [
+                "Y"
+              ]
+            }
+          }
+        ]
+      }
+    }
+    ],
+  "@type": "ReportingEvent"
+}

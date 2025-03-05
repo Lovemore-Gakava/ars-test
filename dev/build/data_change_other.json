@@ -1,0 +1,455 @@
+{
+    "id": "CSR-2023-12-001",
+    "name": "Clinical Study Report",
+    "mainListOfContents": {
+      "name": "Main List of Contents",
+      "contentsList": {
+        "listItems": [
+          {
+            "analysisId": "AN-1001",
+            "name": "Analysis 1001",
+            "level": 1,
+            "order": 1
+          },
+          {
+            "analysisId": "AN-1002",
+            "name": "Analysis 1002",
+            "level": 1,
+            "order": 2
+          },
+          {
+            "outputId": "CSR-2023-12-001",
+            "name": "CSR Output",
+            "level": 1,
+            "order": 3
+          }
+        ]
+      }
+    },
+    "version": 1,
+    "otherListsOfContents": [
+      {
+        "name": "List of Planned Outputs",
+        "label": "LOPO",
+        "contentsList": {
+          "listItems": [
+            {
+              "name": "Summary of Demographics",
+              "level": 1,
+              "order": 1,
+              "outputId": "Out14-1-1"
+            },
+            {
+              "name": "Overall Summary of Treatment-Emergent Adverse Events",
+              "level": 1,
+              "order": 2,
+              "outputId": "Out14-3-1-1"
+            },
+            {
+              "name": "Summary of TEAE by System Organ Class and Preferred Term",
+              "level": 1,
+              "order": 3,
+              "outputId": "Out14-3-2-1"
+            },
+            {
+              "name": "Summary of Observed and Change from Baseline by Scheduled Visits - Vital Signs (Horizontal)",
+              "level": 1,
+              "order": 4,
+              "outputId": "Out14-3-3-1a"
+            },
+            {
+              "name": "Summary of Observed and Change from Baseline by Scheduled Visits - Vital Signs (Vertical)",
+              "level": 1,
+              "order": 5,
+              "outputId": "Out14-3-3-1b"
+            }
+          ]
+        }
+      }
+    ],
+    "referenceDocuments": [
+      {
+        "id": "SAP-2023-06-001",
+        "name": "Statistical Analysis Plan",
+        "location": "SAP-2023-06-001.pdf"
+      },
+      {
+        "id": "sas-program",
+        "name": "SAS Program",
+        "location": "csr-program.sas"
+      }
+    ],
+    "terminologyExtensions": [
+      {
+        "id": "TermEx1",
+        "sponsorTerms": [
+          {
+            "id": "TermEx1_1",
+            "submissionValue": "ADDITIONAL EXAMPLE",
+            "description": "The analysis was included in the set as an additional example to demonstrate both a different type of analysis and sponsor terminology for analysis reason."
+          }
+        ],
+        "enumeration": "AnalysisReasonEnum"
+      }
+    ],
+    "analysisOutputCategorizations": [
+      {
+        "id": "Catn_01_Grp",
+        "label": "Group of Analyses",
+        "categories": [
+          {
+            "id": "Catn_01_Grp_1_Pop",
+            "label": "Population Description"
+          },
+          {
+            "id": "Catn_01_Grp_2_Saf",
+            "label": "Safety"
+          },
+          {
+            "id": "Catn_01_Grp_3_Eff",
+            "label": "Efficacy"
+          }
+        ]
+      },
+      {
+        "id": "Catn_02_DClass",
+        "label": "Analysis Data Class",
+        "categories": [
+          {
+            "id": "Catn_02_Dclass_1_Sbj",
+            "label": "Subject-level",
+            "subCategorizations": [
+              {
+                "id": "Catn_03_SbjDType",
+                "label": "Subject-level Data Type",
+                "categories": [
+                  {
+                    "id": "Catn_03_SbjDType_1_Dm",
+                    "label": "Demographics"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "analysisSets": [
+      {
+        "name": "Intent-to-Treat Population",
+        "label": "ITT",
+        "id": "AnalysisSet_01_ITT",
+        "level": 1,
+        "order": 1,
+        "condition": {
+          "dataset": "ADSL",
+          "variable": "ITTFL",
+          "comparator": "EQ",
+          "value": [
+            "Y"
+          ]
+        }
+      }
+    ],
+    "analysisGroupings": [
+      {
+        "name": "Treatment",
+        "id": "AnlsGrouping_01_Trt",
+        "dataDriven": false,
+        "groupingDataset": "ADSL",
+        "groupingVariable": "TRT01A",
+        "groups": [
+          {
+            "name": "Placebo",
+            "id": "AnlsGrouping_01_Trt_1",
+            "level": 1,
+            "order": 1,
+            "condition": {
+              "dataset": "ADSL",
+              "variable": "TRT01A",
+              "comparator": "EQ",
+              "value": [
+                "Placebo"
+              ]
+            }
+          },
+          {
+            "name": "Xanomeline Low Dose",
+            "id": "AnlsGrouping_01_Trt_2",
+            "level": 1,
+            "order": 2,
+            "condition": {
+              "dataset": "ADSL",
+              "variable": "TRT01A",
+              "comparator": "EQ",
+              "value": [
+                "Xanomeline Low Dose"
+              ]
+            }
+          },
+          {
+            "name": "Xanomeline High Dose",
+            "id": "AnlsGrouping_01_Trt_3",
+            "level": 1,
+            "order": 3,
+            "condition": {
+              "dataset": "ADSL",
+              "variable": "TRT01A",
+              "comparator": "EQ",
+              "value": [
+                "Xanomeline High Dose"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "name": "Count by group for a categorical variable",
+        "description": "Count across groups for a categorical variable, based on subject occurrence",
+        "label": "Grouped count for categorical variable",
+        "id": "Mth01_CatVar_Count_ByGrp",
+        "operations": [
+          {
+            "name": "Count of subjects",
+            "label": "n",
+            "id": "Mth01_CatVar_Count_ByGrp_1_n",
+            "order": 1,
+            "resultPattern": "(N=XX)"
+          }
+        ]
+      }
+    ],
+    "analyses": [
+      {
+        "name": "Summary of Subjects by Treatment",
+        "id": "An01_05_SAF_Summ_ByTrt",
+        "reason": {
+          "controlledTerm": "SPECIFIED IN SAP"
+        },
+        "purpose": {
+          "controlledTerm": "PRIMARY OUTCOME MEASURE"
+        },
+        "methodId": "Mth01_CatVar_Count_ByGrp",
+        "version": 1,
+        "documentRefs": [
+          {
+            "referenceDocumentId": "CDISCPILOT01_SAP",
+            "pageRefs": [
+              {
+                "refType": "PhysicalRef",
+                "label": "6. ANALYSIS POPULATIONS",
+                "pageNumbers": [
+                  9
+                ]
+              }
+            ]
+          }
+        ],
+        "categoryIds": [
+          "Catn_01_Grp_1_Pop",
+          "Catn_02_Dclass_1_Sbj",
+          "Catn_03_SbjDType_1_Dm"
+        ],
+        "dataset": "ADSL",
+        "variable": "USUBJID",
+        "analysisSetId": "AnalysisSet_02_SAF",
+        "orderedGroupings": [
+          {
+            "order": 1,
+            "groupingId": "AnlsGrouping_01_Trt",
+            "resultsByGroup": true
+          }
+        ],
+        "results": [
+          {
+            "operationId": "Mth01_CatVar_Count_ByGrp_1_n",
+            "resultGroups": [
+              {
+                "groupingId": "AnlsGrouping_01_Trt",
+                "groupId": "AnlsGrouping_01_Trt_1"
+              }
+            ],
+            "rawValue": "86",
+            "formattedValue": "(N=86)"
+          },
+          {
+            "operationId": "Mth01_CatVar_Count_ByGrp_1_n",
+            "resultGroups": [
+              {
+                "groupingId": "AnlsGrouping_01_Trt",
+                "groupId": "AnlsGrouping_01_Trt_2"
+              }
+            ],
+            "rawValue": "84",
+            "formattedValue": "(N=84)"
+          },
+          {
+            "operationId": "Mth01_CatVar_Count_ByGrp_1_n",
+            "resultGroups": [
+              {
+                "groupingId": "AnlsGrouping_01_Trt",
+                "groupId": "AnlsGrouping_01_Trt_3"
+              }
+            ],
+            "rawValue": "84",
+            "formattedValue": "(N=84)"
+          }
+        ]
+      }
+    ],
+    "globalDisplaySections": [
+      {
+        "sectionType": "Header",
+        "subSections": [
+          {
+            "id": "GlobalDisp_Header_1",
+            "text": "Study - CDISC 360"
+          },
+          {
+            "id": "GlobalDisp_Header_2",
+            "text": "Page x of y"
+          }
+        ]
+      },
+      {
+        "sectionType": "Title",
+        "subSections": [
+          {
+            "id": "GlobalDisp_Title_1",
+            "text": "Safety Population"
+          }
+        ]
+      },
+      {
+        "sectionType": "Footer",
+        "subSections": [
+          {
+            "id": "GlobalDisp_Footer_1",
+            "text": "Program: <pid>.sas, Output: <pid><oid>.rtf, Generated on: DDMONYYYY:HH:MM"
+          }
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Summary of Demographics",
+        "id": "Out14-1-1",
+        "displays": [
+          {
+            "order": 1,
+            "display": {
+              "name": "Demographics",
+              "label": "Demog",
+              "id": "Disp14-1-1",
+              "version": 1,
+              "displayTitle": "Summary of Demographics",
+              "displaySections": [
+                {
+                  "sectionType": "Header",
+                  "orderedSubSections": [
+                    {
+                      "order": 1,
+                      "subSectionId": "GlobalDisp_Header_1"
+                    },
+                    {
+                      "order": 2,
+                      "subSectionId": "GlobalDisp_Header_2"
+                    }
+                  ]
+                },
+                {
+                  "sectionType": "Title",
+                  "orderedSubSections": [
+                    {
+                      "order": 1,
+                      "subSection": {
+                        "id": "Disp14-1-1_Title_1",
+                        "text": "Table 14.1.1"
+                      }
+                    },
+                    {
+                      "order": 2,
+                      "subSection": {
+                        "id": "Disp14-1-1_Title_2",
+                        "text": "Summary of Demographics"
+                      }
+                    },
+                    {
+                      "order": 3,
+                      "subSectionId": "GlobalDisp_Title_1"
+                    }
+                  ]
+                },
+                {
+                  "sectionType": "Footer",
+                  "orderedSubSections": [
+                    {
+                      "order": 1,
+                      "subSection": {
+                        "id": "Disp14-1-1_Footer_1",
+                        "text": "Source dataset: adsl, Generated on: DDMONYYYY:HH:MM"
+                      }
+                    },
+                    {
+                      "order": 2,
+                      "subSectionId": "GlobalDisp_Footer_1"
+                    }
+                  ]
+                },
+                {
+                  "sectionType": "Rowlabel Header",
+                  "orderedSubSections": [
+                    {
+                      "order": 1,
+                      "subSection": {
+                        "id": "Disp14-1-1_RLbHd_1",
+                        "text": "Characteristics"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "version": 1,
+        "fileSpecifications": [
+          {
+            "name": "t14-1-1-demog (RTF)",
+            "label": "t14-1-1-demog",
+            "fileType": {
+              "controlledTerm": "rtf"
+            },
+            "location": "./t14-1-1-demog.rtf"
+          },
+          {
+            "name": "t14-1-1-demog (PDF)",
+            "label": "t14-1-1-demog",
+            "fileType": {
+              "controlledTerm": "pdf"
+            },
+            "location": "./t14-1-1-demog.pdf"
+          }
+        ],
+        "categoryIds": [
+          "Catn_01_Grp_1_Pop",
+          "Catn_03_SbjDType_1_Dm"
+        ],
+        "documentRefs": [
+          {
+            "referenceDocumentId": "CDISCPILOT01_CSR",
+            "pageRefs": [
+              {
+                "refType": "PhysicalRef",
+                "label": "Table 14-2.01",
+                "firstPage": 46,
+                "lastPage": 48
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

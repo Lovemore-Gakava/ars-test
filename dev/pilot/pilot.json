@@ -1,0 +1,1712 @@
+{
+    "about": {
+        "generatedUsing": "TFL Designer Community",
+        "version": "1.4.0",
+        "note": "The metadata provided herein has been generated using the TFL Designer Community version 1.4.0. The representation of metadata fields available in this worksheet adheres to the CDISC Analysis Results Standard example available on the ARS GitHub repository."
+    },
+    "studyInfo": {
+        "studyId": "CDISCPILOT01",
+        "studyTitle": "CDISCPILOT01",
+        "phase": "Phase II",
+        "compoundUnderStudy": "Xanomeline Transdermal",
+        "description": "This study was a prospective, randomized, multi-center, double-blind, placebo-controlled, parallel-group study. The objectives of the study were to evaluate the efficacy and safety of transdermal xanomeline, 50 cm2 and 75 cm2, and placebo in subjects with mild to moderate Alzheimer’s disease. ",
+        "diseaseArea": "Neurology",
+        "therapeuticArea": "Alzheimer's"
+    },
+    "name": "Clinical Study Report",
+    "id": "CSR",
+    "mainListOfContents": {
+        "name": "List of Planned Analyses",
+        "label": "LOPA",
+        "contentsList": {
+            "listItems": [
+                {
+                    "name": "Summary of Analysis Populations",
+                    "level": 1,
+                    "order": 1,
+                    "outputId": "Out_01",
+                    "sublist": {
+                        "listItems": [
+                            {
+                                "name": "Summary of Subjects by Treatment",
+                                "level": 2,
+                                "order": 1,
+                                "analysisId": "An_01"
+                            },
+                            {
+                                "name": "Enrolled",
+                                "level": 2,
+                                "order": 2,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Enrolled",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_02"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Safety",
+                                "label": "SAF",
+                                "level": 2,
+                                "order": 3,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Safety",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_03"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Intent-To-Treat (ITT)",
+                                "label": "ITT",
+                                "level": 2,
+                                "order": 4,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Intent-To-Treat (ITT)",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_04"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Full Analysis Set",
+                                "label": "FAS",
+                                "level": 2,
+                                "order": 5,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Full Analysis Set",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_05"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Per-Protocol",
+                                "label": "PPP",
+                                "level": 2,
+                                "order": 6,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Per-Protocol",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_06"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Completed Study",
+                                "level": 2,
+                                "order": 7,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Completed Study",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_07"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "Summary of Demographic and Baseline Characteristics",
+                    "level": 1,
+                    "order": 2,
+                    "outputId": "Out_02",
+                    "sublist": {
+                        "listItems": [
+                            {
+                                "name": "Summary of Subjects by Treatment",
+                                "level": 2,
+                                "order": 1,
+                                "analysisId": "An_08"
+                            },
+                            {
+                                "name": "Age",
+                                "level": 2,
+                                "order": 2,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Age",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_09"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Age Group",
+                                "level": 2,
+                                "order": 3,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Age Group",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_10"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Gender",
+                                "level": 2,
+                                "order": 4,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Gender",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_11"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Primary Race",
+                                "level": 2,
+                                "order": 5,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Primary Race",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_12"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Ethnicity",
+                                "level": 2,
+                                "order": 6,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Ethnicity",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_13"
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "name": "Baseline Height (cm)",
+                                "level": 2,
+                                "order": 7,
+                                "sublist": {
+                                    "listItems": [
+                                        {
+                                            "name": "Summary of Subjects by Treatment and Baseline Height (cm)",
+                                            "level": 3,
+                                            "order": 1,
+                                            "analysisId": "An_14"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "otherListsOfContents": [
+        {
+            "name": "List of Planned Outputs",
+            "label": "LOPO",
+            "contentsList": {
+                "listItems": [
+                    {
+                        "name": "Summary of Analysis Populations",
+                        "level": 1,
+                        "order": 1,
+                        "outputId": "Out_01"
+                    },
+                    {
+                        "name": "Summary of Demographic and Baseline Characteristics",
+                        "level": 1,
+                        "order": 2,
+                        "outputId": "Out_02"
+                    }
+                ]
+            }
+        }
+    ],
+    "referenceDocuments": [],
+    "terminologyExtensions": [],
+    "analysisOutputCategorizations": [
+        {
+            "id": "ANSET",
+            "categories": [
+                {
+                    "id": "ANSET_01",
+                    "subCategorizations": [
+                        {
+                            "id": "ANSET_01_ANINT",
+                            "label": "Analysis Of Interest",
+                            "categories": [
+                                {
+                                    "id": "ANSET_01_ANINT_01",
+                                    "label": "Disposition"
+                                },
+                                {
+                                    "id": "ANSET_01_ANINT_02",
+                                    "label": "Demographics"
+                                }
+                            ]
+                        }
+                    ],
+                    "label": "Safety"
+                }
+            ],
+            "label": "Analysis Sets"
+        }
+    ],
+    "analysisSets": [
+        {
+            "level": 1,
+            "order": 1,
+            "id": "AnalysisSet_01",
+            "name": "Safety",
+            "label": "SAF",
+            "description": "The Safety population includes all randomized subjects known to have taken at least one dose of randomized study drug.",
+            "condition": {
+                "dataset": "ADSL",
+                "variable": "SAFFL",
+                "comparator": "EQ",
+                "value": [
+                    "Y"
+                ]
+            }
+        },
+        {
+            "level": 1,
+            "order": 1,
+            "id": "AnalysisSet_02",
+            "name": "Safety Population",
+             "label": "SAF",
+            "description": ""
+        }
+    ],
+    "analysisGroupings": [
+        {
+            "name": "Treatment",
+            "id": "AnlsGrouping_01_Trt01P",
+            "dataDriven": false,
+            "groupingDataset": "ADSL",
+            "groupingVariable": "TRT01P",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_01_Trt01P_01",
+                    "name": "Xanomeline Low Dose ^(N=xx)",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "TRT01P",
+                        "comparator": "EQ",
+                        "value": [
+                            "Xanomeline Low Dose"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 2,
+                    "id": "AnlsGrouping_01_Trt01P_02",
+                    "name": "Xanomeline High Dose ^(N=xx)",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "TRT01P",
+                        "comparator": "",
+                        "value": [
+                            ""
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 3,
+                    "id": "AnlsGrouping_01_Trt01P_03",
+                    "name": "Placebo",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "TRT01P",
+                        "comparator": "",
+                        "value": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_02_Enrlfl",
+            "dataDriven": false,
+            "name": "Enrolled Population Flag",
+            "label": "EPF",
+            "label": "Enrolled",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "ENRLFL",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_02_Enrlfl_01",
+                    "name": "Enrolled",
+                    "label": "Enrolled",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "ENRLFL",
+                        "comparator": "EQ",
+                        "value": [
+                            "'Y'"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_03_Saffl",
+            "dataDriven": false,
+            "name": "Safety Population Flag",
+            "label": "Safety",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "SAFFL",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_03_Saffl_01",
+                    "name": "Safety",
+                    "label": "Safety",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "SAFFL",
+                        "comparator": "EQ",
+                        "value": [
+                            "'Y'"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_04_Ittfl",
+            "dataDriven": false,
+            "name": "Intent-To-Treat Population Flag",
+            "label": "Intent-To-Treat (ITT)",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "ITTFL",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_04_Ittfl_01",
+                    "name": "Intent-To-Treat (ITT)",
+                    "label": "Intent-To-Treat (ITT)",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "ITTFL",
+                        "comparator": "EQ",
+                        "value": [
+                            "'Y'"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_05_Fasfl",
+            "dataDriven": false,
+            "name": "Full Analysis Set Population Flag",
+            "label": "Full Analysis Set",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "FASFL",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_05_Fasfl_01",
+                    "name": "Full Analysis Set",
+                    "label": "Full Analysis Set",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "FASFL",
+                        "comparator": "EQ",
+                        "value": [
+                            "'Y"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_06_Pprotfl",
+            "dataDriven": false,
+            "name": "Per-Protocol Population Flag",
+            "label": "Per-Protocol",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "PPROTFL",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_06_Pprotfl_01",
+                    "name": "Per-Protocol",
+                    "label": "Per-Protocol",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "PPROTFL",
+                        "comparator": "EQ",
+                        "value": [
+                            "'Y'"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_07_Complfl",
+            "dataDriven": false,
+            "name": "Completers Population Flag",
+            "label": "Completed Study",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "COMPLFL",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_07_Complfl_01",
+                    "name": "Completed Study",
+                    "label": "Completed Study",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "COMPLFL",
+                        "comparator": "EQ",
+                        "value": [
+                            "'Y'"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Treatment",
+            "id": "AnlsGrouping_08_Trt01P",
+            "dataDriven": false,
+            "groupingDataset": "ADSL",
+            "groupingVariable": "TRT01P",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_08_Trt01P_01",
+                    "name": "Xanomeline Low Dose ^(N=xx)",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "TRT01P",
+                        "comparator": "EQ",
+                        "value": [
+                            "Xanomeline Low Dose"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 2,
+                    "id": "AnlsGrouping_08_Trt01P_02",
+                    "name": "Xanomeline High Dose ^(N=xx)",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "TRT01P",
+                        "comparator": "",
+                        "value": [
+                            ""
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 3,
+                    "id": "AnlsGrouping_08_Trt01P_03",
+                    "name": "Placebo",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "TRT01P",
+                        "comparator": "",
+                        "value": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_09_Agegr1N",
+            "dataDriven": false,
+            "name": "Pooled Age Group y (N)",
+            "label": "Age Group",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "AGEGR1N",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_09_Agegr1N_01",
+                    "name": "< 65 yrs",
+                    "label": "< 65 yrs",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "AGEGR1N",
+                        "comparator": "EQ",
+                        "value": [
+                            "1"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 2,
+                    "id": "AnlsGrouping_09_Agegr1N_02",
+                    "name": "65 to 80 yrs",
+                    "label": "65 to 80 yrs",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "AGEGR1N",
+                        "comparator": "EQ",
+                        "value": [
+                            "2"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 3,
+                    "id": "AnlsGrouping_09_Agegr1N_03",
+                    "name": "> 80 yrs",
+                    "label": "> 80 yrs",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "AGEGR1N",
+                        "comparator": "EQ",
+                        "value": [
+                            "3"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_10_Sex",
+            "dataDriven": false,
+            "name": "Sex",
+            "label": "Gender",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "SEX",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_10_Sex_01",
+                    "name": "Female",
+                    "label": "Female",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "SEX",
+                        "comparator": "EQ",
+                        "value": [
+                            "'F'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 2,
+                    "id": "AnlsGrouping_10_Sex_02",
+                    "name": "Male",
+                    "label": "Male",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "SEX",
+                        "comparator": "EQ",
+                        "value": [
+                            "'M'"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_11_Race",
+            "dataDriven": false,
+            "name": "Race",
+            "label": "Primary Race",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "RACE",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_11_Race_01",
+                    "name": "American Indian or Alaska Native",
+                    "label": "American Indian or Alaska Native",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "RACE",
+                        "comparator": "EQ",
+                        "value": [
+                            "'AMERICAN INDIAN OR ALASKA NATIVE'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 2,
+                    "id": "AnlsGrouping_11_Race_02",
+                    "name": "Asian",
+                    "label": "Asian",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "RACE",
+                        "comparator": "EQ",
+                        "value": [
+                            "'ASIAN'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 3,
+                    "id": "AnlsGrouping_11_Race_03",
+                    "name": "Black or African American",
+                    "label": "Black or African American",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "RACE",
+                        "comparator": "EQ",
+                        "value": [
+                            "'BLACK OR AFRICAN AMERICAN'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 4,
+                    "id": "AnlsGrouping_11_Race_04",
+                    "name": "Native Hawaiian or Other Pacific Islander",
+                    "label": "Native Hawaiian or Other Pacific Islander",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "RACE",
+                        "comparator": "EQ",
+                        "value": [
+                            "'NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 5,
+                    "id": "AnlsGrouping_11_Race_05",
+                    "name": "Not Reported",
+                    "label": "Not Reported",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "RACE",
+                        "comparator": "EQ",
+                        "value": [
+                            "'NOT REPORTED'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 6,
+                    "id": "AnlsGrouping_11_Race_06",
+                    "name": "Other",
+                    "label": "Other",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "RACE",
+                        "comparator": "EQ",
+                        "value": [
+                            "'OTHER'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 7,
+                    "id": "AnlsGrouping_11_Race_07",
+                    "name": "Unknown",
+                    "label": "Unknown",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "RACE",
+                        "comparator": "EQ",
+                        "value": [
+                            "'UNKNOWN'"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "id": "AnlsGrouping_12_Ethnic",
+            "dataDriven": false,
+            "name": "Ethnicity",
+            "label": "Ethnicity",
+            "groupingDataset": "ADSL",
+            "groupingVariable": "ETHNIC",
+            "groups": [
+                {
+                    "level": 1,
+                    "order": 1,
+                    "id": "AnlsGrouping_12_Ethnic_01",
+                    "name": "Hispanic or Latino",
+                    "label": "Hispanic or Latino",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "ETHNIC",
+                        "comparator": "EQ",
+                        "value": [
+                            "'HISPANIC OR LATINO'"
+                        ]
+                    }
+                },
+                {
+                    "level": 1,
+                    "order": 2,
+                    "id": "AnlsGrouping_12_Ethnic_02",
+                    "name": "Not Hispanic or Latino",
+                    "label": "Not Hispanic or Latino",
+                    "condition": {
+                        "dataset": "ADSL",
+                        "variable": "ETHNIC",
+                        "comparator": "",
+                        "value": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "dataSubsets": [
+        {
+            "level": 1,
+            "order": 1,
+            "id": "Dss_01",
+            "label": "",
+            "condition": {
+                "dataset": "ADSL",
+                "variable": "ARM",
+                "comparator": "NOTIN",
+                "value": [
+                    "'SCREEN FAILURE'"
+                ]
+            }
+        }
+    ],
+    "methods": [
+        {
+            "name": "Summary by group of a categorical variable",
+            "id": "Mth_01",
+            "operations": [
+                {
+                    "id": "Mth_01_01_n",
+                    "order": 1,
+                    "name": "n",
+                    "label": "n",
+                    "resultPattern": "XX"
+                },
+                {
+                    "id": "Mth_01_02_%",
+                    "order": 2,
+                    "name": "%",
+                    "label": "%",
+                    "resultPattern": "(XX.XX)",
+                    "referencedOperationRelationships": [
+                        {
+                            "id": "Mth_01_02_%_NUM",
+                            "referencedOperationRole": {
+                                "controlledTerm": "NUMERATOR"
+                            },
+                            "operationId": "Mth_01_01_n",
+                            "description": "The count operation whose result provides the numerator for calculation of the percentage. The referenced analysis should be the analysis that contains this percent operation."
+                        },
+                        {
+                            "id": "Mth_01_02_%_DEN",
+                            "referencedOperationRole": {
+                                "controlledTerm": "DENOMINATOR"
+                            },
+                            "operationId": "<'Total N' information missing>",
+                            "description": "The count operation whose result provides the denominator for calculation of the percentage. The referenced analysis should have the same analysis set and subject grouping(s) as the analysis containing this percent operation."
+                        }
+                    ]
+                }
+            ],
+            "label": "Grouped summary of categorical variable",
+            "description": "Descriptive summary statistics across groups for a categorical variable, based on subject occurrence"
+        },
+        {
+            "name": "Summary by group of a continuous variable",
+            "id": "Mth_02",
+            "operations": [
+                {
+                    "id": "Mth_02_01_n",
+                    "order": 1,
+                    "name": "n",
+                    "label": "n",
+                    "resultPattern": "XX"
+                },
+                {
+                    "id": "Mth_02_02_Mean",
+                    "order": 2,
+                    "name": "Mean",
+                    "label": "Mean",
+                    "resultPattern": "XX.X"
+                },
+                {
+                    "id": "Mth_02_03_SD",
+                    "order": 3,
+                    "name": "SD",
+                    "label": "SD",
+                    "resultPattern": "(XX.XX)"
+                },
+                {
+                    "id": "Mth_02_04_Median",
+                    "order": 4,
+                    "name": "Median",
+                    "label": "Median",
+                    "resultPattern": "XX.X"
+                },
+                {
+                    "id": "Mth_02_05_Q1",
+                    "order": 5,
+                    "name": "Q1",
+                    "label": "Q1",
+                    "resultPattern": "XX.X"
+                },
+                {
+                    "id": "Mth_02_06_Q3",
+                    "order": 6,
+                    "name": "Q3",
+                    "label": "Q3",
+                    "resultPattern": "XX.X"
+                },
+                {
+                    "id": "Mth_02_07_Min",
+                    "order": 7,
+                    "name": "Min",
+                    "label": "Min",
+                    "resultPattern": "XX.X"
+                },
+                {
+                    "id": "Mth_02_08_Max",
+                    "order": 8,
+                    "name": "Max",
+                    "label": "Max",
+                    "resultPattern": "XX.X"
+                }
+            ],
+            "label": "Grouped summary of continuous variable",
+            "description": "Descriptive summary statistics across groups for a continuous variable"
+        }
+    ],
+    "analyses": [
+        {
+            "name": "Summary of Subjects by Treatment",
+            "id": "An_01",
+            "reason": {
+                "controlledTerm": ""
+            },
+            "purpose": {
+                "controlledTerm": ""
+            },
+            "methodId": "",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_01_Trt01P"
+                }
+            ],
+            "results": [
+                {
+                    "resultGroups": [
+                        {
+                            "groupingId": "AnlsGrouping_01_Trt01P",
+                            "groupId": "AnlsGrouping_01_Trt01P_01"
+                        }
+                    ],
+                    "rawValue": "",
+                    "formattedValue": "(N=)"
+                },
+                {
+                    "resultGroups": [
+                        {
+                            "groupingId": "AnlsGrouping_01_Trt01P",
+                            "groupId": "AnlsGrouping_01_Trt01P_02"
+                        }
+                    ],
+                    "rawValue": "",
+                    "formattedValue": "(N=)"
+                },
+                {
+                    "resultGroups": [
+                        {
+                            "groupingId": "AnlsGrouping_01_Trt01P",
+                            "groupId": "AnlsGrouping_01_Trt01P_03"
+                        }
+                    ],
+                    "rawValue": "",
+                    "formattedValue": "(N=)"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Enrolled",
+            "id": "An_02",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Study Population"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_01_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_02_Enrlfl"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_02"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_01"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Safety",
+            "id": "An_03",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Study Population"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_01_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_03_Saffl"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_03"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_01"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Intent-To-Treat (ITT)",
+            "id": "An_04",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Study Population"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_01_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_04_Ittfl"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_04"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_01"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Full Analysis Set",
+            "id": "An_05",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Study Population"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_01_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_05_Fasfl"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_05"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_01"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Per-Protocol",
+            "id": "An_06",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Study Population"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_01_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_06_Pprotfl"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_06"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_01"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Completed Study",
+            "id": "An_07",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Study Population"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_01_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_07_Complfl"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_07"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_01"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment",
+            "id": "An_08",
+            "reason": {
+                "controlledTerm": ""
+            },
+            "purpose": {
+                "controlledTerm": ""
+            },
+            "methodId": "",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "Dss_01",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_08_Trt01P"
+                }
+            ],
+            "results": [
+                {
+                    "resultGroups": [
+                        {
+                            "groupingId": "AnlsGrouping_08_Trt01P",
+                            "groupId": "AnlsGrouping_08_Trt01P_01"
+                        }
+                    ],
+                    "rawValue": "",
+                    "formattedValue": "(N=)"
+                },
+                {
+                    "resultGroups": [
+                        {
+                            "groupingId": "AnlsGrouping_08_Trt01P",
+                            "groupId": "AnlsGrouping_08_Trt01P_02"
+                        }
+                    ],
+                    "rawValue": "",
+                    "formattedValue": "(N=)"
+                },
+                {
+                    "resultGroups": [
+                        {
+                            "groupingId": "AnlsGrouping_08_Trt01P",
+                            "groupId": "AnlsGrouping_08_Trt01P_03"
+                        }
+                    ],
+                    "rawValue": "",
+                    "formattedValue": "(N=)"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Age",
+            "id": "An_09",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Summary of Demographics and Baseline Characteristics"
+            },
+            "methodId": "Mth_02",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "dataset": "ADSL",
+            "variable": "AGE",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "Dss_01",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_08_Trt01P"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Age Group",
+            "id": "An_10",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Summary of Demographics and Baseline Characteristics"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "Dss_01",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_08_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_09_Agegr1N"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_10"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_08"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Gender",
+            "id": "An_11",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Summary of Demographics and Baseline Characteristics"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "Dss_01",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_08_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_10_Sex"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_11"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_08"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Primary Race",
+            "id": "An_12",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Summary of Demographics and Baseline Characteristics"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "Dss_01",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_08_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_11_Race"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_12"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_08"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Ethnicity",
+            "id": "An_13",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Summary of Demographics and Baseline Characteristics"
+            },
+            "methodId": "Mth_01",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "dataset": "ADSL",
+            "variable": "USUBJID",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "Dss_01",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_08_Trt01P"
+                },
+                {
+                    "order": 2,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_12_Ethnic"
+                }
+            ],
+            "referencedAnalysisOperations": [
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_NUM",
+                    "analysisId": "An_13"
+                },
+                {
+                    "referencedOperationRelationshipId": "Mth_01_02_%_DEN",
+                    "analysisId": "An_08"
+                }
+            ]
+        },
+        {
+            "name": "Summary of Subjects by Treatment and Baseline Height (cm)",
+            "id": "An_14",
+            "reason": {
+                "controlledTerm": "SPECIFIED IN SAP"
+            },
+            "purpose": {
+                "controlledTerm": "Summary of Demographics and Baseline Characteristics"
+            },
+            "methodId": "Mth_02",
+            "version": 1,
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "dataset": "ADSL",
+            "variable": "HGTBL",
+            "analysisSetId": "AnalysisSet_02",
+            "dataSubsetId": "Dss_01",
+            "orderedGroupings": [
+                {
+                    "order": 1,
+                    "resultsByGroup": true,
+                    "groupingId": "AnlsGrouping_08_Trt01P"
+                }
+            ]
+        }
+    ],
+    "globalDisplaySections": [
+        {
+            "sectionType": "Title",
+            "subSections": [
+                {
+                    "id": "GlobalDisp_Header_01",
+                    "text": "CDISCPILOT01"
+                }
+            ]
+        }
+    ],
+    "outputs": [
+        {
+            "name": "Summary of Analysis Populations",
+            "id": "Out_01",
+            "version": 1,
+            "fileSpecifications": [],
+            "displays": [
+                {
+                    "order": 1,
+                    "display": {
+                        "name": "Summary of Analysis Populations",
+                        "id": "Disp_01",
+                        "version": 1,
+                        "displayTitle": "Summary of Analysis Populations",
+                        "displaySections": [
+                            {
+                                "sectionType": "Title",
+                                "orderedSubSections": [
+                                    {
+                                        "order": 1,
+                                        "subSection": {
+                                            "id": "Disp_01_Title_01",
+                                            "text": "Table 14.1.1.1"
+                                        }
+                                    },
+                                    {
+                                        "order": 2,
+                                        "subSection": {
+                                            "id": "Disp_01_Title_02",
+                                            "text": "Summary of Analysis Populations"
+                                        }
+                                    },
+                                    {
+                                        "order": 3,
+                                        "subSection": {
+                                            "id": "Disp_01_Title_03",
+                                            "text": "Safety Population"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "sectionType": "Footnote",
+                                "orderedSubSections": [
+                                    {
+                                        "order": 1,
+                                        "subSection": {
+                                            "id": "Disp_01_Footnote_01",
+                                            "text": "NOTE: N in column headers represents number of subjects entered in study (i.e., signed informed consent). The ITT population includes all subjects randomized. The Safety population includes all randomized subjects known to have taken at least one dose of randomized study drug. The Full Analysis Set population includes all subjects in the safety population who also have at least one post-baseline ADAS-Cog and CIBIC+assessment."
+                                        }
+                                    },
+                                    {
+                                        "order": 2,
+                                        "subSection": {
+                                            "id": "Disp_01_Footnote_02",
+                                            "text": "Source: adxx; Program name; Program run date/time"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "sectionType": "Rowlabel Header",
+                                "orderedSubSections": [
+                                    {
+                                        "order": 1,
+                                        "subSection": {
+                                            "id": "Disp_01_RowlabelHeader_01",
+                                            "text": "Analysis Population, n (%)"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_01"
+            ],
+            "documentRefs": [],
+            "programmingCode": {}
+        },
+        {
+            "name": "Summary of Demographic and Baseline Characteristics",
+            "id": "Out_02",
+            "version": 1,
+            "fileSpecifications": [],
+            "displays": [
+                {
+                    "order": 1,
+                    "display": {
+                        "name": "Summary of Demographic and Baseline Characteristics",
+                        "id": "Disp_02",
+                        "version": 1,
+                        "displayTitle": "Summary of Demographic and Baseline Characteristics",
+                        "displaySections": [
+                            {
+                                "sectionType": "Title",
+                                "orderedSubSections": [
+                                    {
+                                        "order": 1,
+                                        "subSection": {
+                                            "id": "Disp_02_Title_01",
+                                            "text": "Table 14.1.1.3"
+                                        }
+                                    },
+                                    {
+                                        "order": 2,
+                                        "subSection": {
+                                            "id": "Disp_02_Title_02",
+                                            "text": "Summary of Demographic and Baseline Characteristics"
+                                        }
+                                    },
+                                    {
+                                        "order": 3,
+                                        "subSection": {
+                                            "id": "Disp_02_Title_03",
+                                            "text": "Safety Population"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "sectionType": "Footnote",
+                                "orderedSubSections": [
+                                    {
+                                        "order": 1,
+                                        "subSection": {
+                                            "id": "Disp_02_Footnote_01",
+                                            "text": "Source: adxx; Program name; Program run date/time"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "sectionType": "Rowlabel Header",
+                                "orderedSubSections": [
+                                    {
+                                        "order": 1,
+                                        "subSection": {
+                                            "id": "Disp_02_RowlabelHeader_01",
+                                            "text": "Characteristics"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "categoryIds": [
+                "ANSET_01",
+                "ANSET_01_ANINT_02"
+            ],
+            "documentRefs": [],
+            "programmingCode": {}
+        }
+    ],
+    "@type": "ReportingEvent"
+}
