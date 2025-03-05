@@ -1,0 +1,315 @@
+{
+  "id": "CSR-2023-12-001",
+  "name": "Clinical Study Report",
+  "mainListOfContents": {
+    "name": "List of Planned Analyses",
+    "label": "LOPA",
+    "contentsList": {
+      "listItems": [
+        {
+          "name": "Summary of Demographics",
+          "level": 1,
+          "order": 1,
+          "outputId": "CSR-2023-12-001",
+          "sublist": {
+            "listItems": [
+              {
+                "name": "Number of Subjects by Treatment and Sex",
+                "level": 2,
+                "order": 1,
+                "analysisId": "AN-1001"
+              },
+              {
+                "name": "Mean Age by Treatment",
+                "level": 2,
+                "order": 2,
+                "analysisId": "AN-1002"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "version": 1,
+  "otherListsOfContents": [
+    {
+      "name": "List of Planned Outputs",
+      "label": "LOPO",
+      "contentsList": {
+        "listItems": [
+          {
+            "name": "Summary of Demographics",
+            "level": 1,
+            "order": 1,
+            "outputId": "Out14-1-1"
+          }
+        ]
+      }
+    }
+  ],
+  "referenceDocuments": [
+    {
+      "id": "SAP-2023-06-001",
+      "name": "Statistical Analysis Plan",
+      "location": "SAP-2023-06-001.pdf"
+    },
+    {
+      "id": "sas-program",
+      "name": "SAS Program",
+      "location": "csr-program.sas"
+    }
+  ],
+  "terminologyExtensions": [
+    {
+      "id": "TermEx1",
+      "sponsorTerms": [
+        {
+          "id": "TermEx1_1",
+          "submissionValue": "ADDITIONAL EXAMPLE",
+          "description": "The analysis was included in the set as an additional example to demonstrate both a different type of analysis and sponsor terminology for analysis reason."
+        }
+      ],
+      "enumeration": "AnalysisReasonEnum"
+    }
+  ],
+  "analysisOutputCategorizations": [
+    {
+      "id": "Catn_01_Grp",
+      "label": "Group of Analyses",
+      "categories": [
+        {
+          "id": "Catn_01_Grp_1_Pop",
+          "label": "Population Description"
+        },
+        {
+          "id": "Catn_01_Grp_2_Saf",
+          "label": "Safety"
+        },
+        {
+          "id": "Catn_01_Grp_3_Eff",
+          "label": "Efficacy"
+        }
+      ]
+    },
+    {
+      "id": "Catn_02_DClass",
+      "label": "Analysis Data Class",
+      "categories": [
+        {
+          "id": "Catn_02_Dclass_1_Sbj",
+          "label": "Subject-level",
+          "subCategorizations": [
+            {
+              "id": "Catn_03_SbjDType",
+              "label": "Subject-level Data Type",
+              "categories": [
+                {
+                  "id": "Catn_03_SbjDType_1_Dm",
+                  "label": "Demographics"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "analysisSets": [
+    {
+      "name": "Intent-to-Treat Population",
+      "label": "ITT",
+      "id": "AnalysisSet_01_ITT",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADSL",
+        "variable": "ITTFL",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    }
+  ],
+  "analysisGroupings": [
+    {
+      "name": "Treatment",
+      "id": "AnlsGrouping_01_Trt",
+      "dataDriven": false,
+      "groupingDataset": "ADSL",
+      "groupingVariable": "TRT01A",
+      "groups": [
+        {
+          "name": "Placebo",
+          "id": "AnlsGrouping_01_Trt_1",
+          "level": 1,
+          "order": 1,
+          "condition": {
+            "dataset": "ADSL",
+            "variable": "TRT01A",
+            "comparator": "EQ",
+            "value": [
+              "Placebo"
+            ]
+          }
+        },
+        {
+          "name": "Xanomeline Low Dose",
+          "id": "AnlsGrouping_01_Trt_2",
+          "level": 1,
+          "order": 2,
+          "condition": {
+            "dataset": "ADSL",
+            "variable": "TRT01A",
+            "comparator": "EQ",
+            "value": [
+              "Xanomeline Low Dose"
+            ]
+          }
+        },
+        {
+          "name": "Xanomeline High Dose",
+          "id": "AnlsGrouping_01_Trt_3",
+          "level": 1,
+          "order": 3,
+          "condition": {
+            "dataset": "ADSL",
+            "variable": "TRT01A",
+            "comparator": "EQ",
+            "value": [
+              "Xanomeline High Dose"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "name": "Count by group for a categorical variable",
+      "description": "Count across groups for a categorical variable, based on subject occurrence",
+      "label": "Grouped count for categorical variable",
+      "id": "Mth01_CatVar_Count_ByGrp",
+      "operations": [
+        {
+          "name": "Count of subjects",
+          "label": "n",
+          "id": "Mth01_CatVar_Count_ByGrp_1_n",
+          "order": 1,
+          "resultPattern": "(N=XX)"
+        }
+      ]
+    },
+    {
+      "name": "Summary of Demographics",
+      "id": "AN-1001",
+      "operations": [
+        {
+          "name": "Count of subjects",
+          "label": "n",
+          "id": "AN-1001-1",
+          "order": 1,
+          "resultPattern": "(N=XX)"
+        }
+      ]
+    },
+    {
+      "name": "Mean Age by Treatment",
+      "id": "AN-1002",
+      "operations": [
+        {
+          "name": "Mean",
+          "label": "Mean",
+          "id": "AN-1002-1",
+          "order": 1,
+          "resultPattern": "XX.X"
+        }
+      ]
+    }
+  ],
+  "dataSubsets": [
+    {
+      "id": "AnalysisSet_02_SAF",
+      "name": "Safety Analysis Set",
+      "label": "SAF",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADSL",
+        "variable": "SAFFL",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    }
+  ],
+  "analyses": [
+    {
+      "id": "AN-1001",
+      "name": "Summary of Demographics",
+      "label": "Demographics Summary",
+      "methodId": "Mth01_CatVar_Count_ByGrp",
+      "reason": {
+        "controlledTerm": "SPECIFIED IN SAP"
+      },
+      "purpose": {
+        "controlledTerm": "EXPLORATORY OUTCOME MEASURE"
+      },
+      "dataSubsetId": "AnalysisSet_01_ITT",
+      "orderedGroupings": [
+        {
+          "order": 1,
+          "groupingId": "AnlsGrouping_01_Trt",
+          "resultsByGroup": true
+        }
+      ],
+      "documentRefs": [
+        {
+          "referenceDocumentId": "SAP-2023-06-001",
+          "pageRefs": [
+            {
+              "refType": "PhysicalRef",
+              "label": "Section 8.1",
+              "pageNumbers": [15]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AN-1002",
+      "name": "Mean Age by Treatment",
+      "label": "Mean Age Summary",
+      "methodId": "Mth02_ContVar_Summ_ByGrp",
+      "reason": {
+        "controlledTerm": "SPECIFIED IN SAP"
+      },
+      "purpose": {
+        "controlledTerm": "EXPLORATORY OUTCOME MEASURE"
+      },
+      "dataSubsetId": "AnalysisSet_01_ITT",
+      "orderedGroupings": [
+        {
+          "order": 1,
+          "groupingId": "AnlsGrouping_01_Trt",
+          "resultsByGroup": true
+        }
+      ],
+      "documentRefs": [
+        {
+          "referenceDocumentId": "SAP-2023-06-001",
+          "pageRefs": [
+            {
+              "refType": "PhysicalRef",
+              "label": "Section 8.1",
+              "pageNumbers": [15]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

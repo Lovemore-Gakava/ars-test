@@ -1,0 +1,286 @@
+{
+  "id": "CSD-2023-001",
+  "name": "CSDisplays",
+  "mainListOfContents": {
+    "name": "List of Planned Analyses",
+    "label": "LOPA",
+    "contentsList": {
+      "listItems": [
+        {
+          "name": "Summary of Demographics",
+          "level": 1,
+          "order": 1,
+          "outputId": "Out14-1-1"
+        },
+        {
+          "name": "Overall Summary of Treatment-Emergent Adverse Events",
+          "level": 1,
+          "order": 2,
+          "outputId": "Out14-3-1-1",
+          "sublist": {
+            "listItems": [
+              {
+                "name": "Number of subjects with at least one event",
+                "level": 2,
+                "order": 2,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "TEAE",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "An07_01_TEAE_Summ_ByTrt"
+                    },
+                    {
+                      "name": "Related TEAE",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "An07_02_RelTEAE_Summ_ByTrt"
+                    },
+                    {
+                      "name": "Serious TEAE",
+                      "level": 3,
+                      "order": 3,
+                      "analysisId": "An07_03_SerTEAE_Summ_ByTrt"
+                    },
+                    {
+                      "name": "Related Serious TEAE",
+                      "level": 3,
+                      "order": 4,
+                      "analysisId": "An07_04_RelSerTEAE_Summ_ByTrt"
+                    },
+                    {
+                      "name": "TEAE Leading to Death",
+                      "level": 3,
+                      "order": 5,
+                      "analysisId": "An07_05_TEAELd2Dth_Summ_ByTrt"
+                    },
+                    {
+                      "name": "Related TEAE Leading to Death",
+                      "level": 3,
+                      "order": 6,
+                      "analysisId": "An07_06_RelTEAELd2Dth_Summ_ByTrt"
+                    },
+                    {
+                      "name": "TEAE Leading to Dose Modification",
+                      "level": 3,
+                      "order": 7,
+                      "analysisId": "An07_07_TEAELd2DoseMod_Summ_ByTrt"
+                    },
+                    {
+                      "name": "TEAE Leading to Treatment Discontinuation",
+                      "level": 3,
+                      "order": 8,
+                      "analysisId": "An07_08_TEAELd2TrtDsc_Summ_ByTrt"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "otherListsOfContents": [
+    {
+      "name": "List of Planned Outputs",
+      "label": "LOPO",
+      "contentsList": {
+        "listItems": [
+          {
+            "name": "Summary of Demographics",
+            "level": 1,
+            "order": 1,
+            "outputId": "Out14-1-1"
+          },
+          {
+            "name": "Overall Summary of Treatment-Emergent Adverse Events",
+            "level": 1,
+            "order": 2,
+            "outputId": "Out14-3-1-1"
+          },
+          {
+            "name": "Summary of TEAE by System Organ Class and Preferred Term",
+            "level": 1,
+            "order": 3,
+            "outputId": "Out14-3-2-1"
+          },
+          {
+            "name": "Summary of Observed and Change from Baseline by Scheduled Visits - Vital Signs (Horizontal)",
+            "level": 1,
+            "order": 4,
+            "outputId": "Out14-3-3-1a"
+          },
+          {
+            "name": "Summary of Observed and Change from Baseline by Scheduled Visits - Vital Signs (Vertical)",
+            "level": 1,
+            "order": 5,
+            "outputId": "Out14-3-3-1b"
+          }
+        ]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "id": "Out14-1-1",
+      "name": "Summary of Demographics",
+      "displays": [
+        {
+          "order": 1,
+          "display": {
+            "id": "Disp14-1-1",
+            "name": "Demographics",
+            "displayTitle": "Summary of Demographics",
+            "displaySections": [
+              {
+                "sectionType": "Title",
+                "orderedSubSections": [
+                  {
+                    "order": 1,
+                    "subSection": {
+                      "id": "Disp14-1-1_Title_1",
+                      "text": "Table 14.1.1"
+                    }
+                  },
+                  {
+                    "order": 2,
+                    "subSection": {
+                      "id": "Disp14-1-1_Title_2",
+                      "text": "Summary of Demographics"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "analyses": [
+    {
+      "id": "An26",
+      "name": "Analysis of Adverse Events",
+      "methodId": "Mth01_CatVar_Summ_ByGrp",
+      "reason": {
+        "controlledTerm": "SPECIFIED IN SAP"
+      },
+      "purpose": {
+        "controlledTerm": "PRIMARY OUTCOME MEASURE"
+      },
+      "results": [
+        {
+          "operationId": "Mth01_CatVar_Summ_ByGrp_2_pct",
+          "resultGroups": [
+            {
+              "groupingId": "AnlsGrouping_01_Trt",
+              "groupId": "AnlsGrouping_01_Trt_2"
+            },
+            {
+              "groupingId": "AnlsGrouping_06_Soc",
+              "groupValue": "NERVOUS SYSTEM DISORDERS"
+            },
+            {
+              "groupingId": "AnlsGrouping_07_Pt",
+              "groupValue": "COMPLEX PARTIAL SEIZURES"
+            }
+          ],
+          "rawValue": "1.1905",
+          "formattedValue": "(  1.2)"
+        },
+        {
+          "operationId": "Mth01_CatVar_Summ_ByGrp_2_pct",
+          "resultGroups": [
+            {
+              "groupingId": "AnlsGrouping_01_Trt",
+              "groupId": "AnlsGrouping_01_Trt_3"
+            },
+            {
+              "groupingId": "AnlsGrouping_06_Soc",
+              "groupValue": "NERVOUS SYSTEM DISORDERS"
+            },
+            {
+              "groupingId": "AnlsGrouping_07_Pt",
+              "groupValue": "COMPLEX PARTIAL SEIZURES"
+            }
+          ],
+          "rawValue": "0",
+          "formattedValue": "(  0.0)"
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "id": "Mth01_CatVar_Summ_ByGrp",
+      "name": "Count and percentage for a categorical variable",
+      "description": "Count and percentage across groups for a categorical variable",
+      "label": "Count and percentage for categorical variable",
+      "operations": [
+        {
+          "id": "Mth01_CatVar_Summ_ByGrp_1_n",
+          "name": "Count of subjects",
+          "label": "n",
+          "order": 1,
+          "resultPattern": "XX"
+        },
+        {
+          "id": "Mth01_CatVar_Summ_ByGrp_2_pct",
+          "name": "Percentage of subjects",
+          "label": "%",
+          "order": 2,
+          "resultPattern": "XX.X",
+          "referencedOperationRelationships": [
+            {
+              "id": "Mth01_CatVar_Summ_ByGrp_2_pct_NUM",
+              "referencedOperationRole": {
+                "controlledTerm": "NUMERATOR"
+              },
+              "operationId": "Mth01_CatVar_Summ_ByGrp_1_n"
+            },
+            {
+              "id": "Mth01_CatVar_Summ_ByGrp_2_pct_DEN",
+              "referencedOperationRole": {
+                "controlledTerm": "DENOMINATOR"
+              },
+              "operationId": "Mth01_CatVar_Summ_ByGrp_1_n"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "analysisGroupings": [
+    {
+      "id": "AnlsGrouping_01_Trt",
+      "name": "Treatment",
+      "dataDriven": false,
+      "groups": [
+        {
+          "id": "AnlsGrouping_01_Trt_2",
+          "name": "Xanomeline Low Dose",
+          "level": 1,
+          "order": 1
+        },
+        {
+          "id": "AnlsGrouping_01_Trt_3",
+          "name": "Xanomeline High Dose",
+          "level": 1,
+          "order": 2
+        }
+      ]
+    },
+    {
+      "id": "AnlsGrouping_06_Soc",
+      "name": "System Organ Class",
+      "dataDriven": true
+    },
+    {
+      "id": "AnlsGrouping_07_Pt",
+      "name": "Preferred Term",
+      "dataDriven": true
+    }
+  ]
+}
