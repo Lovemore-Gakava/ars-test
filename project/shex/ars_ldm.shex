@@ -1,0 +1,730 @@
+BASE <https://www.cdisc.org/ars/1-0/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+<Analysis> CLOSED {
+    (  $<Analysis_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <version> @linkml:Integer ? ;
+          <reason> @<ExtensibleTerminologyTerm> ;
+          <purpose> @<ExtensibleTerminologyTerm> ;
+          <documentRefs> @<DocumentReference> * ;
+          <categoryIds> @<AnalysisOutputCategory> * ;
+          <dataset> @linkml:String ? ;
+          <variable> @linkml:String ? ;
+          <analysisSetId> @<AnalysisSet> ? ;
+          <dataSubsetId> @<DataSubset> ? ;
+          <orderedGroupings> @<OrderedGroupingFactor> * ;
+          <methodId> @<AnalysisMethod> ;
+          <referencedAnalysisOperations> @<ReferencedAnalysisOperation> * ;
+          <programmingCode> @<AnalysisOutputProgrammingCode> ? ;
+          <results> @<OperationResult> *
+       ) ;
+       rdf:type [ <Analysis> ]
+    )
+}
+
+<AnalysisMethod> CLOSED {
+    (  $<AnalysisMethod_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <documentRefs> @<DocumentReference> * ;
+          <operations> @<Operation> + ;
+          <codeTemplate> @<AnalysisProgrammingCodeTemplate> ?
+       ) ;
+       rdf:type [ <AnalysisMethod> ]
+    )
+}
+
+<AnalysisOutputCategorization> CLOSED {
+    (  $<AnalysisOutputCategorization_tes> (  <label> @linkml:String ? ;
+          <categories> @<AnalysisOutputCategory> +
+       ) ;
+       rdf:type [ <AnalysisOutputCategorization> ]
+    )
+}
+
+<AnalysisOutputCategory> CLOSED {
+    (  $<AnalysisOutputCategory_tes> (  <label> @linkml:String ? ;
+          <subCategorizations> @<AnalysisOutputCategorization> *
+       ) ;
+       rdf:type [ <AnalysisOutputCategory> ]
+    )
+}
+
+<AnalysisOutputCodeParameter> CLOSED {
+    (  $<AnalysisOutputCodeParameter_tes> (  &<CodeParameter_tes> ;
+          rdf:type [ <CodeParameter> ] ? ;
+          <value> @linkml:String +
+       ) ;
+       rdf:type [ <AnalysisOutputCodeParameter> ] ?
+    )
+}
+
+<AnalysisOutputProgrammingCode> CLOSED {
+    (  $<AnalysisOutputProgrammingCode_tes> (  <context> @linkml:String ;
+          <code> @linkml:String ? ;
+          <documentRef> @<DocumentReference> ? ;
+          <parameters> @<AnalysisOutputCodeParameter> *
+       ) ;
+       rdf:type [ <AnalysisOutputProgrammingCode> ] ?
+    )
+}
+
+<AnalysisProgrammingCodeTemplate> CLOSED {
+    (  $<AnalysisProgrammingCodeTemplate_tes> (  <context> @linkml:String ;
+          <code> @linkml:String ? ;
+          <documentRef> @<DocumentReference> ? ;
+          <parameters> @<TemplateCodeParameter> *
+       ) ;
+       rdf:type [ <AnalysisProgrammingCodeTemplate> ] ?
+    )
+}
+
+<AnalysisPurpose> CLOSED {
+    (  $<AnalysisPurpose_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @<AnalysisPurposeEnum> ;
+          <sponsorTermId> @<SponsorTerm> ?
+       ) ;
+       rdf:type [ <AnalysisPurpose> ] ?
+    )
+}
+
+<AnalysisReason> CLOSED {
+    (  $<AnalysisReason_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @<AnalysisReasonEnum> ;
+          <sponsorTermId> @<SponsorTerm> ?
+       ) ;
+       rdf:type [ <AnalysisReason> ] ?
+    )
+}
+
+<AnalysisSet> CLOSED {
+    (  $<AnalysisSet_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          &<WhereClause_tes> ;
+          rdf:type [ <WhereClause> ] ? ;
+          <compoundExpression> @<CompoundSetExpression> ? ;
+          <condition> @<WhereClauseCondition> ? ;
+          <level> @linkml:Integer ;
+          <order> @linkml:Integer
+       ) ;
+       rdf:type [ <AnalysisSet> ]
+    )
+}
+
+<CodeParameter>  (
+    @<AnalysisOutputCodeParameter> OR @<TemplateCodeParameter>
+)
+
+<CodeParameter_struct> {
+    (  $<CodeParameter_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ?
+       ) ;
+       rdf:type [ <CodeParameter> ] ?
+    )
+}
+
+<CompoundGroupExpression> CLOSED {
+    (  $<CompoundGroupExpression_tes> (  &<WhereClauseCompoundExpression_tes> ;
+          rdf:type [ <WhereClauseCompoundExpression> ] ? ;
+          <whereClauses> @<SubClause> *
+       ) ;
+       rdf:type [ <CompoundGroupExpression> ] ?
+    )
+}
+
+<CompoundSetExpression> CLOSED {
+    (  $<CompoundSetExpression_tes> (  &<WhereClauseCompoundExpression_tes> ;
+          rdf:type [ <WhereClauseCompoundExpression> ] ? ;
+          <whereClauses> @<SubClause> *
+       ) ;
+       rdf:type [ <CompoundSetExpression> ] ?
+    )
+}
+
+<CompoundSubsetExpression> CLOSED {
+    (  $<CompoundSubsetExpression_tes> (  &<WhereClauseCompoundExpression_tes> ;
+          rdf:type [ <WhereClauseCompoundExpression> ] ? ;
+          <whereClauses> @<SubClause> *
+       ) ;
+       rdf:type [ <CompoundSubsetExpression> ] ?
+    )
+}
+
+<DataSubset> CLOSED {
+    (  $<DataSubset_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          &<WhereClause_tes> ;
+          rdf:type [ <WhereClause> ] ? ;
+          <compoundExpression> @<CompoundSubsetExpression> ? ;
+          <condition> @<WhereClauseCondition> ? ;
+          <level> @linkml:Integer ;
+          <order> @linkml:Integer
+       ) ;
+       rdf:type [ <DataSubset> ]
+    )
+}
+
+<DisplaySection> CLOSED {
+    (  $<DisplaySection_tes> (  <sectionType> @<DisplaySectionTypeEnum> ? ;
+          <orderedSubSections> @<OrderedDisplaySubSection> *
+       ) ;
+       rdf:type [ <DisplaySection> ] ?
+    )
+}
+
+<DisplaySubSection> CLOSED {
+    (  $<DisplaySubSection_tes> <text> @linkml:String ;
+       rdf:type [ <DisplaySubSection> ]
+    )
+}
+
+<DocumentReference> CLOSED {
+    (  $<DocumentReference_tes> (  <referenceDocumentId> @<ReferenceDocument> ;
+          <pageRefs> @<PageRef> *
+       ) ;
+       rdf:type [ <DocumentReference> ] ?
+    )
+}
+
+<ExtensibleTerminologyTerm>  (
+    @<AnalysisPurpose> OR @<AnalysisReason> OR @<OperationRole> OR @<OutputFileType> OR @<SponsorAnalysisPurpose> OR
+    @<SponsorAnalysisReason> OR @<SponsorOperationRole> OR @<SponsorOutputFileType>
+)
+
+<ExtensibleTerminologyTerm_struct> {
+    (  $<ExtensibleTerminologyTerm_tes> (  <controlledTerm> @linkml:String ? ;
+          <sponsorTermId> @<SponsorTerm> ?
+       ) ;
+       rdf:type [ <ExtensibleTerminologyTerm> ] ?
+    )
+}
+
+<GlobalDisplaySection> CLOSED {
+    (  $<GlobalDisplaySection_tes> (  <sectionType> @<DisplaySectionTypeEnum> ? ;
+          <subSections> @<DisplaySubSection> *
+       ) ;
+       rdf:type [ <GlobalDisplaySection> ] ?
+    )
+}
+
+<Group> CLOSED {
+    (  $<Group_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          &<WhereClause_tes> ;
+          rdf:type [ <WhereClause> ] ? ;
+          <compoundExpression> @<CompoundGroupExpression> ? ;
+          <condition> @<WhereClauseCondition> ? ;
+          <level> @linkml:Integer ;
+          <order> @linkml:Integer
+       ) ;
+       rdf:type [ <Group> ]
+    )
+}
+
+<GroupingFactor> CLOSED {
+    (  $<GroupingFactor_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <groupingDataset> @linkml:String ? ;
+          <groupingVariable> @linkml:String ? ;
+          <dataDriven> @linkml:Boolean ;
+          <groups> @<Group> *
+       ) ;
+       rdf:type [ <GroupingFactor> ]
+    )
+}
+
+<LevelOrder> {
+    (  $<LevelOrder_tes> (  <level> @linkml:Integer ;
+          <order> @linkml:Integer
+       ) ;
+       rdf:type [ <LevelOrder> ] ?
+    )
+}
+
+<ListOfContents> CLOSED {
+    (  $<ListOfContents_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <contentsList> @<NestedList>
+       ) ;
+       rdf:type [ <ListOfContents> ] ?
+    )
+}
+
+<NamedObject>  (
+    @<Analysis> OR @<AnalysisMethod> OR @<AnalysisSet> OR @<CodeParameter> OR @<DataSubset> OR @<Group> OR @<GroupingFactor> OR
+    @<ListOfContents> OR @<Operation> OR @<OrderedListItem> OR @<Output> OR @<OutputDisplay> OR @<OutputFile> OR
+    @<ReferenceDocument> OR @<ReportingEvent>
+)
+
+<NamedObject_struct> {
+    (  $<NamedObject_tes> (  <name> @linkml:String ;
+          <description> @linkml:String ? ;
+          <label> @linkml:String ?
+       ) ;
+       rdf:type [ <NamedObject> ] ?
+    )
+}
+
+<NestedList> CLOSED {
+    (  $<NestedList_tes> <listItems> @<OrderedListItem> * ;
+       rdf:type [ <NestedList> ] ?
+    )
+}
+
+<Operation> CLOSED {
+    (  $<Operation_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <order> @linkml:Integer ;
+          <referencedOperationRelationships> @<ReferencedOperationRelationship> * ;
+          <resultPattern> @linkml:String ?
+       ) ;
+       rdf:type [ <Operation> ]
+    )
+}
+
+<OperationResult> CLOSED {
+    (  $<OperationResult_tes> (  <operationId> @<Operation> ;
+          <resultGroups> @<ResultGroup> * ;
+          <rawValue> @linkml:String ? ;
+          <formattedValue> @linkml:String ?
+       ) ;
+       rdf:type [ <OperationResult> ] ?
+    )
+}
+
+<OperationRole> CLOSED {
+    (  $<OperationRole_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @<OperationRoleEnum> ;
+          <sponsorTermId> @<SponsorTerm> ?
+       ) ;
+       rdf:type [ <OperationRole> ] ?
+    )
+}
+
+<OrderedDisplay> CLOSED {
+    (  $<OrderedDisplay_tes> (  <order> @linkml:Integer ;
+          <display> @<OutputDisplay>
+       ) ;
+       rdf:type [ <OrderedDisplay> ] ?
+    )
+}
+
+<OrderedDisplaySubSection>  (
+    @<OrderedSubSection> OR @<OrderedSubSectionRef>
+)
+
+<OrderedDisplaySubSection_struct> {
+    (  $<OrderedDisplaySubSection_tes> (  <order> @linkml:Integer ;
+          <subSection> @<DisplaySubSection> ? ;
+          <subSectionId> @<DisplaySubSection> ?
+       ) ;
+       rdf:type [ <OrderedDisplaySubSection> ] ?
+    )
+}
+
+<OrderedGroupingFactor> CLOSED {
+    (  $<OrderedGroupingFactor_tes> (  <order> @linkml:Integer ;
+          <groupingId> @<GroupingFactor> ;
+          <resultsByGroup> @linkml:Boolean
+       ) ;
+       rdf:type [ <OrderedGroupingFactor> ] ?
+    )
+}
+
+<OrderedListItem> CLOSED {
+    (  $<OrderedListItem_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          &<LevelOrder_tes> ;
+          rdf:type [ <LevelOrder> ] ? ;
+          <analysisId> @<Analysis> ? ;
+          <outputId> @<Output> ? ;
+          <sublist> @<NestedList> ? ;
+          <level> @linkml:Integer ;
+          <order> @linkml:Integer
+       ) ;
+       rdf:type [ <OrderedListItem> ] ?
+    )
+}
+
+<OrderedSubSection> CLOSED {
+    (  $<OrderedSubSection_tes> (  &<OrderedDisplaySubSection_tes> ;
+          rdf:type [ <OrderedDisplaySubSection> ] ? ;
+          <subSection> @<DisplaySubSection> ;
+          <subSectionId> @<DisplaySubSection> ?
+       ) ;
+       rdf:type [ <OrderedSubSection> ] ?
+    )
+}
+
+<OrderedSubSectionRef> CLOSED {
+    (  $<OrderedSubSectionRef_tes> (  &<OrderedDisplaySubSection_tes> ;
+          rdf:type [ <OrderedDisplaySubSection> ] ? ;
+          <subSection> @<DisplaySubSection> ? ;
+          <subSectionId> @<DisplaySubSection>
+       ) ;
+       rdf:type [ <OrderedSubSectionRef> ] ?
+    )
+}
+
+<Output> CLOSED {
+    (  $<Output_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <version> @linkml:Integer ? ;
+          <fileSpecifications> @<OutputFile> * ;
+          <displays> @<OrderedDisplay> + ;
+          <categoryIds> @<AnalysisOutputCategory> * ;
+          <documentRefs> @<DocumentReference> * ;
+          <programmingCode> @<AnalysisOutputProgrammingCode> ?
+       ) ;
+       rdf:type [ <Output> ]
+    )
+}
+
+<OutputDisplay> CLOSED {
+    (  $<OutputDisplay_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <version> @linkml:Integer ? ;
+          <displayTitle> @linkml:String ? ;
+          <displaySections> @<DisplaySection> *
+       ) ;
+       rdf:type [ <OutputDisplay> ]
+    )
+}
+
+<OutputFile> CLOSED {
+    (  $<OutputFile_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <fileType> @<ExtensibleTerminologyTerm> ? ;
+          <location> @linkml:Uri ? ;
+          <style> @linkml:String ?
+       ) ;
+       rdf:type [ <OutputFile> ] ?
+    )
+}
+
+<OutputFileType> CLOSED {
+    (  $<OutputFileType_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @<OutputFileTypeEnum> ;
+          <sponsorTermId> @<SponsorTerm> ?
+       ) ;
+       rdf:type [ <OutputFileType> ] ?
+    )
+}
+
+<PageNameRef> CLOSED {
+    (  $<PageNameRef_tes> (  &<PageRef_tes> ;
+          rdf:type [ <PageRef> ] ? ;
+          <refType> @<PageRefTypeEnum> ;
+          <pageNumbers> @linkml:Integer * ;
+          <pageNames> @linkml:String + ;
+          <firstPage> @linkml:Integer ? ;
+          <lastPage> @linkml:Integer ?
+       ) ;
+       rdf:type [ <PageNameRef> ] ?
+    )
+}
+
+<PageNumberListRef> CLOSED {
+    (  $<PageNumberListRef_tes> (  &<PageRef_tes> ;
+          rdf:type [ <PageRef> ] ? ;
+          <refType> @<PageRefTypeEnum> ;
+          <pageNumbers> @linkml:Integer + ;
+          <pageNames> @linkml:String * ;
+          <firstPage> @linkml:Integer ? ;
+          <lastPage> @linkml:Integer ?
+       ) ;
+       rdf:type [ <PageNumberListRef> ] ?
+    )
+}
+
+<PageNumberRangeRef> CLOSED {
+    (  $<PageNumberRangeRef_tes> (  &<PageRef_tes> ;
+          rdf:type [ <PageRef> ] ? ;
+          <refType> @<PageRefTypeEnum> ;
+          <pageNumbers> @linkml:Integer * ;
+          <pageNames> @linkml:String * ;
+          <firstPage> @linkml:Integer ;
+          <lastPage> @linkml:Integer
+       ) ;
+       rdf:type [ <PageNumberRangeRef> ] ?
+    )
+}
+
+<PageRef>  (
+    @<PageNameRef> OR @<PageNumberListRef> OR @<PageNumberRangeRef>
+)
+
+<PageRef_struct> {
+    (  $<PageRef_tes> (  <refType> @<PageRefTypeEnum> ;
+          <label> @linkml:String ? ;
+          <pageNames> @linkml:String * ;
+          <pageNumbers> @linkml:Integer * ;
+          <firstPage> @linkml:Integer ? ;
+          <lastPage> @linkml:Integer ?
+       ) ;
+       rdf:type [ <PageRef> ] ?
+    )
+}
+
+<ReferencedAnalysisOperation> CLOSED {
+    (  $<ReferencedAnalysisOperation_tes> (  <referencedOperationRelationshipId> @<ReferencedOperationRelationship> ;
+          <analysisId> @<Analysis>
+       ) ;
+       rdf:type [ <ReferencedAnalysisOperation> ] ?
+    )
+}
+
+<ReferencedAnalysisSet> CLOSED {
+    (  $<ReferencedAnalysisSet_tes> (  &<ReferencedWhereClause_tes> ;
+          rdf:type [ <ReferencedWhereClause> ] ? ;
+          <subClauseId> @<AnalysisSet>
+       ) ;
+       rdf:type [ <ReferencedAnalysisSet> ] ?
+    )
+}
+
+<ReferencedDataSubset> CLOSED {
+    (  $<ReferencedDataSubset_tes> (  &<ReferencedWhereClause_tes> ;
+          rdf:type [ <ReferencedWhereClause> ] ? ;
+          <subClauseId> @<DataSubset>
+       ) ;
+       rdf:type [ <ReferencedDataSubset> ] ?
+    )
+}
+
+<ReferencedGroup> CLOSED {
+    (  $<ReferencedGroup_tes> (  &<ReferencedWhereClause_tes> ;
+          rdf:type [ <ReferencedWhereClause> ] ? ;
+          <subClauseId> @<Group>
+       ) ;
+       rdf:type [ <ReferencedGroup> ] ?
+    )
+}
+
+<ReferenceDocument> CLOSED {
+    (  $<ReferenceDocument_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <location> @linkml:Uri ?
+       ) ;
+       rdf:type [ <ReferenceDocument> ]
+    )
+}
+
+<ReferencedOperationRelationship> CLOSED {
+    (  $<ReferencedOperationRelationship_tes> (  <referencedOperationRole> @<ExtensibleTerminologyTerm> ;
+          <operationId> @<Operation> ;
+          <analysisId> @<Analysis> ? ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <ReferencedOperationRelationship> ]
+    )
+}
+
+<ReferencedWhereClause>  (
+    @<ReferencedAnalysisSet> OR @<ReferencedDataSubset> OR @<ReferencedGroup>
+)
+
+<ReferencedWhereClause_struct> {
+    (  $<ReferencedWhereClause_tes> (  &<LevelOrder_tes> ;
+          rdf:type [ <LevelOrder> ] ? ;
+          <subClauseId> @linkml:String ;
+          <level> @linkml:Integer ;
+          <order> @linkml:Integer
+       ) ;
+       rdf:type [ <ReferencedWhereClause> ] ?
+    )
+}
+
+<ReportingEvent> CLOSED {
+    (  $<ReportingEvent_tes> (  &<NamedObject_tes> ;
+          rdf:type [ <NamedObject> ] ? ;
+          <version> @linkml:Integer ? ;
+          <mainListOfContents> @<ListOfContents> ;
+          <otherListsOfContents> @<ListOfContents> * ;
+          <referenceDocuments> @<ReferenceDocument> * ;
+          <terminologyExtensions> @<TerminologyExtension> * ;
+          <analysisOutputCategorizations> @<AnalysisOutputCategorization> * ;
+          <analysisSets> @<AnalysisSet> * ;
+          <dataSubsets> @<DataSubset> * ;
+          <analysisGroupings> @<GroupingFactor> * ;
+          <methods> @<AnalysisMethod> * ;
+          <analyses> @<Analysis> * ;
+          <globalDisplaySections> @<GlobalDisplaySection> * ;
+          <outputs> @<Output> *
+       ) ;
+       rdf:type [ <ReportingEvent> ]
+    )
+}
+
+<ResultGroup> CLOSED {
+    (  $<ResultGroup_tes> (  <groupingId> @<GroupingFactor> ;
+          <groupId> @<Group> ? ;
+          <groupValue> @linkml:String ?
+       ) ;
+       rdf:type [ <ResultGroup> ] ?
+    )
+}
+
+<SponsorAnalysisPurpose> CLOSED {
+    (  $<SponsorAnalysisPurpose_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @linkml:String ? ;
+          <sponsorTermId> @<SponsorTerm>
+       ) ;
+       rdf:type [ <SponsorAnalysisPurpose> ] ?
+    )
+}
+
+<SponsorAnalysisReason> CLOSED {
+    (  $<SponsorAnalysisReason_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @linkml:String ? ;
+          <sponsorTermId> @<SponsorTerm>
+       ) ;
+       rdf:type [ <SponsorAnalysisReason> ] ?
+    )
+}
+
+<SponsorOperationRole> CLOSED {
+    (  $<SponsorOperationRole_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @linkml:String ? ;
+          <sponsorTermId> @<SponsorTerm>
+       ) ;
+       rdf:type [ <SponsorOperationRole> ] ?
+    )
+}
+
+<SponsorOutputFileType> CLOSED {
+    (  $<SponsorOutputFileType_tes> (  &<ExtensibleTerminologyTerm_tes> ;
+          rdf:type [ <ExtensibleTerminologyTerm> ] ? ;
+          <controlledTerm> @linkml:String ? ;
+          <sponsorTermId> @<SponsorTerm>
+       ) ;
+       rdf:type [ <SponsorOutputFileType> ] ?
+    )
+}
+
+<SponsorTerm> CLOSED {
+    (  $<SponsorTerm_tes> (  <submissionValue> @linkml:String ;
+          <description> @linkml:String ?
+       ) ;
+       rdf:type [ <SponsorTerm> ]
+    )
+}
+
+<SubClause> {
+    (  $<SubClause_tes> (  &<LevelOrder_tes> ;
+          rdf:type [ <LevelOrder> ] ? ;
+          &<WhereClause_tes> ;
+          rdf:type [ <WhereClause> ] ? ;
+          &<ReferencedWhereClause_tes> ;
+          rdf:type [ <ReferencedWhereClause> ] ? ;
+          <subClauseId> @linkml:String ? ;
+          <level> @linkml:Integer ;
+          <order> @linkml:Integer ;
+          <condition> @<WhereClauseCondition> ? ;
+          <compoundExpression> @<WhereClauseCompoundExpression> ?
+       ) ;
+       rdf:type [ <SubClause> ] ?
+    )
+}
+
+<TemplateCodeParameter> CLOSED {
+    (  $<TemplateCodeParameter_tes> (  &<CodeParameter_tes> ;
+          rdf:type [ <CodeParameter> ] ? ;
+          <valueSource> @linkml:String ? ;
+          <value> @linkml:String *
+       ) ;
+       rdf:type [ <TemplateCodeParameter> ] ?
+    )
+}
+
+<TerminologyExtension> CLOSED {
+    (  $<TerminologyExtension_tes> (  <enumeration> @<ExtensibleTerminologyEnum> ? ;
+          <sponsorTerms> @<SponsorTerm> +
+       ) ;
+       rdf:type [ <TerminologyExtension> ]
+    )
+}
+
+<WhereClause> CLOSED {
+    (  $<WhereClause_tes> (  &<LevelOrder_tes> ;
+          rdf:type [ <LevelOrder> ] ? ;
+          <condition> @<WhereClauseCondition> ? ;
+          <compoundExpression> @<WhereClauseCompoundExpression> ? ;
+          <level> @linkml:Integer ;
+          <order> @linkml:Integer
+       ) ;
+       rdf:type [ <WhereClause> ] ?
+    )
+}
+
+<WhereClauseCompoundExpression>  (
+    @<CompoundGroupExpression> OR @<CompoundSetExpression> OR @<CompoundSubsetExpression>
+)
+
+<WhereClauseCompoundExpression_struct> {
+    (  $<WhereClauseCompoundExpression_tes> (  <logicalOperator> @<ExpressionLogicalOperatorEnum> ;
+          <whereClauses> @<SubClause> *
+       ) ;
+       rdf:type [ <WhereClauseCompoundExpression> ] ?
+    )
+}
+
+<WhereClauseCondition> CLOSED {
+    (  $<WhereClauseCondition_tes> (  <dataset> @linkml:String ? ;
+          <variable> @linkml:String ? ;
+          <comparator> @<ConditionComparatorEnum> ? ;
+          <value> @linkml:String *
+       ) ;
+       rdf:type [ <WhereClauseCondition> ] ?
+    )
+}
+
+

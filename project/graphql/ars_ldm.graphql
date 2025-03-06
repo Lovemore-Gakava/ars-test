@@ -1,0 +1,522 @@
+type Analysis
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    version: Integer
+    reason: ExtensibleTerminologyTerm!
+    purpose: ExtensibleTerminologyTerm!
+    documentRefs: [DocumentReference]
+    categoryIds: [AnalysisOutputCategory]
+    dataset: String
+    variable: String
+    analysisSetId: AnalysisSet
+    dataSubsetId: DataSubset
+    orderedGroupings: [OrderedGroupingFactor]
+    methodId: AnalysisMethod!
+    referencedAnalysisOperations: [ReferencedAnalysisOperation]
+    programmingCode: AnalysisOutputProgrammingCode
+    results: [OperationResult]
+  }
+
+type AnalysisMethod
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    documentRefs: [DocumentReference]
+    operations: [Operation]!
+    codeTemplate: AnalysisProgrammingCodeTemplate
+  }
+
+type AnalysisOutputCategorization
+  {
+    id: String!
+    label: String
+    categories: [AnalysisOutputCategory]!
+  }
+
+type AnalysisOutputCategory
+  {
+    id: String!
+    label: String
+    subCategorizations: [AnalysisOutputCategorization]
+  }
+
+type AnalysisOutputCodeParameter
+  {
+    name: String!
+    description: String
+    label: String
+    value: [String]!
+  }
+
+type AnalysisOutputProgrammingCode
+  {
+    context: String!
+    code: String
+    documentRef: DocumentReference
+    parameters: [AnalysisOutputCodeParameter]
+  }
+
+type AnalysisProgrammingCodeTemplate
+  {
+    context: String!
+    code: String
+    documentRef: DocumentReference
+    parameters: [TemplateCodeParameter]
+  }
+
+type AnalysisPurpose
+  {
+    controlledTerm: AnalysisPurposeEnum!
+    sponsorTermId: SponsorTerm
+  }
+
+type AnalysisReason
+  {
+    controlledTerm: AnalysisReasonEnum!
+    sponsorTermId: SponsorTerm
+  }
+
+type AnalysisSet implements WhereClause
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    compoundExpression: CompoundSetExpression
+    condition: WhereClauseCondition
+    level: Integer!
+    order: Integer!
+  }
+
+interface CodeParameter
+  {
+    name: String!
+    description: String
+    label: String
+  }
+
+type CompoundGroupExpression
+  {
+    logicalOperator: ExpressionLogicalOperatorEnum!
+    whereClauses: [SubClause]
+  }
+
+type CompoundSetExpression
+  {
+    logicalOperator: ExpressionLogicalOperatorEnum!
+    whereClauses: [SubClause]
+  }
+
+type CompoundSubsetExpression
+  {
+    logicalOperator: ExpressionLogicalOperatorEnum!
+    whereClauses: [SubClause]
+  }
+
+type DataSubset implements WhereClause
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    compoundExpression: CompoundSubsetExpression
+    condition: WhereClauseCondition
+    level: Integer!
+    order: Integer!
+  }
+
+type DisplaySection
+  {
+    sectionType: DisplaySectionTypeEnum
+    orderedSubSections: [OrderedDisplaySubSection]
+  }
+
+type DisplaySubSection
+  {
+    id: String!
+    text: String!
+  }
+
+type DocumentReference
+  {
+    referenceDocumentId: ReferenceDocument!
+    pageRefs: [PageRef]
+  }
+
+interface ExtensibleTerminologyTerm
+  {
+    controlledTerm: String
+    sponsorTermId: SponsorTerm
+  }
+
+type GlobalDisplaySection
+  {
+    sectionType: DisplaySectionTypeEnum
+    subSections: [DisplaySubSection]
+  }
+
+type Group implements WhereClause
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    compoundExpression: CompoundGroupExpression
+    condition: WhereClauseCondition
+    level: Integer!
+    order: Integer!
+  }
+
+type GroupingFactor
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    groupingDataset: String
+    groupingVariable: String
+    dataDriven: Boolean!
+    groups: [Group]
+  }
+
+interface LevelOrder
+  {
+    level: Integer!
+    order: Integer!
+  }
+
+type ListOfContents
+  {
+    name: String!
+    description: String
+    label: String
+    contentsList: NestedList!
+  }
+
+interface NamedObject
+  {
+    name: String!
+    description: String
+    label: String
+  }
+
+type NestedList
+  {
+    listItems: [OrderedListItem]
+  }
+
+type Operation
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    order: Integer!
+    referencedOperationRelationships: [ReferencedOperationRelationship]
+    resultPattern: String
+  }
+
+type OperationResult
+  {
+    operationId: Operation!
+    resultGroups: [ResultGroup]
+    rawValue: String
+    formattedValue: String
+  }
+
+type OperationRole
+  {
+    controlledTerm: OperationRoleEnum!
+    sponsorTermId: SponsorTerm
+  }
+
+type OrderedDisplay
+  {
+    order: Integer!
+    display: OutputDisplay!
+  }
+
+interface OrderedDisplaySubSection
+  {
+    order: Integer!
+    subSection: DisplaySubSection
+    subSectionId: DisplaySubSection
+  }
+
+type OrderedGroupingFactor
+  {
+    order: Integer!
+    groupingId: GroupingFactor!
+    resultsByGroup: Boolean!
+  }
+
+type OrderedListItem implements LevelOrder
+  {
+    name: String!
+    description: String
+    label: String
+    analysisId: Analysis
+    outputId: Output
+    sublist: NestedList
+    level: Integer!
+    order: Integer!
+  }
+
+type OrderedSubSection
+  {
+    order: Integer!
+    subSection: DisplaySubSection!
+    subSectionId: DisplaySubSection
+  }
+
+type OrderedSubSectionRef
+  {
+    order: Integer!
+    subSection: DisplaySubSection
+    subSectionId: DisplaySubSection!
+  }
+
+type Output
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    version: Integer
+    fileSpecifications: [OutputFile]
+    displays: [OrderedDisplay]!
+    categoryIds: [AnalysisOutputCategory]
+    documentRefs: [DocumentReference]
+    programmingCode: AnalysisOutputProgrammingCode
+  }
+
+type OutputDisplay
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    version: Integer
+    displayTitle: String
+    displaySections: [DisplaySection]
+  }
+
+type OutputFile
+  {
+    name: String!
+    description: String
+    label: String
+    fileType: ExtensibleTerminologyTerm
+    location: Uri
+    style: String
+  }
+
+type OutputFileType
+  {
+    controlledTerm: OutputFileTypeEnum!
+    sponsorTermId: SponsorTerm
+  }
+
+type PageNameRef
+  {
+    label: String
+    refType: PageRefTypeEnum!
+    pageNumbers: [Integer]
+    pageNames: [String]!
+    firstPage: Integer
+    lastPage: Integer
+  }
+
+type PageNumberListRef
+  {
+    label: String
+    refType: PageRefTypeEnum!
+    pageNumbers: [Integer]!
+    pageNames: [String]
+    firstPage: Integer
+    lastPage: Integer
+  }
+
+type PageNumberRangeRef
+  {
+    label: String
+    refType: PageRefTypeEnum!
+    pageNumbers: [Integer]
+    pageNames: [String]
+    firstPage: Integer!
+    lastPage: Integer!
+  }
+
+interface PageRef
+  {
+    refType: PageRefTypeEnum!
+    label: String
+    pageNames: [String]
+    pageNumbers: [Integer]
+    firstPage: Integer
+    lastPage: Integer
+  }
+
+type ReferencedAnalysisOperation
+  {
+    referencedOperationRelationshipId: ReferencedOperationRelationship!
+    analysisId: Analysis!
+  }
+
+type ReferencedAnalysisSet
+  {
+    level: Integer!
+    order: Integer!
+    subClauseId: AnalysisSet!
+  }
+
+type ReferencedDataSubset
+  {
+    level: Integer!
+    order: Integer!
+    subClauseId: DataSubset!
+  }
+
+type ReferencedGroup
+  {
+    level: Integer!
+    order: Integer!
+    subClauseId: Group!
+  }
+
+type ReferenceDocument
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    location: Uri
+  }
+
+type ReferencedOperationRelationship
+  {
+    id: String!
+    referencedOperationRole: ExtensibleTerminologyTerm!
+    operationId: Operation!
+    analysisId: Analysis
+    description: String
+  }
+
+type ReferencedWhereClause implements LevelOrder
+  {
+    subClauseId: String!
+    level: Integer!
+    order: Integer!
+  }
+
+type ReportingEvent
+  {
+    name: String!
+    description: String
+    label: String
+    id: String!
+    version: Integer
+    mainListOfContents: ListOfContents!
+    otherListsOfContents: [ListOfContents]
+    referenceDocuments: [ReferenceDocument]
+    terminologyExtensions: [TerminologyExtension]
+    analysisOutputCategorizations: [AnalysisOutputCategorization]
+    analysisSets: [AnalysisSet]
+    dataSubsets: [DataSubset]
+    analysisGroupings: [GroupingFactor]
+    methods: [AnalysisMethod]
+    analyses: [Analysis]
+    globalDisplaySections: [GlobalDisplaySection]
+    outputs: [Output]
+  }
+
+type ResultGroup
+  {
+    groupingId: GroupingFactor!
+    groupId: Group
+    groupValue: String
+  }
+
+type SponsorAnalysisPurpose
+  {
+    controlledTerm: String
+    sponsorTermId: SponsorTerm!
+  }
+
+type SponsorAnalysisReason
+  {
+    controlledTerm: String
+    sponsorTermId: SponsorTerm!
+  }
+
+type SponsorOperationRole
+  {
+    controlledTerm: String
+    sponsorTermId: SponsorTerm!
+  }
+
+type SponsorOutputFileType
+  {
+    controlledTerm: String
+    sponsorTermId: SponsorTerm!
+  }
+
+type SponsorTerm
+  {
+    id: String!
+    submissionValue: String!
+    description: String
+  }
+
+type SubClause implements LevelOrder, WhereClause, ReferencedWhereClause
+  {
+    subClauseId: String
+    level: Integer!
+    order: Integer!
+    condition: WhereClauseCondition
+    compoundExpression: WhereClauseCompoundExpression
+  }
+
+type TemplateCodeParameter
+  {
+    name: String!
+    description: String
+    label: String
+    valueSource: String
+    value: [String]
+  }
+
+type TerminologyExtension
+  {
+    id: String!
+    enumeration: ExtensibleTerminologyEnum
+    sponsorTerms: [SponsorTerm]!
+  }
+
+type WhereClause implements LevelOrder
+  {
+    condition: WhereClauseCondition
+    compoundExpression: WhereClauseCompoundExpression
+    level: Integer!
+    order: Integer!
+  }
+
+interface WhereClauseCompoundExpression
+  {
+    logicalOperator: ExpressionLogicalOperatorEnum!
+    whereClauses: [SubClause]
+  }
+
+type WhereClauseCondition
+  {
+    dataset: String
+    variable: String
+    comparator: ConditionComparatorEnum
+    value: [String]
+  }
+

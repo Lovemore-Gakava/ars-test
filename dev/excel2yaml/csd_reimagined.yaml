@@ -1,0 +1,2111 @@
+name: csd_reimagined
+id: CSD
+mainListOfContents:
+  name: List of Planned Analyses
+  label: LOPA
+  contentsList:
+    listItems:
+    - name: Summary of Demographics
+      level: 1
+      order: 1
+      outputId: Out14-1-1
+      sublist:
+        listItems:
+        - name: Summary of Subjects by Treatment
+          level: 2
+          order: 1
+          analysisId: An01_05_SAF_Summ_ByTrt
+        - name: Age
+          level: 2
+          order: 2
+          sublist:
+            listItems:
+            - name: Summary by Treatment
+              level: 3
+              order: 1
+              analysisId: An03_01_Age_Summ_ByTrt
+            - name: Comparison by Treatment
+              level: 3
+              order: 2
+              analysisId: An03_01_Age_Comp_ByTrt
+        - name: Age Group
+          level: 2
+          order: 3
+          sublist:
+            listItems:
+            - name: Summary of Subjects by Treatment
+              level: 3
+              order: 1
+              analysisId: An03_02_AgeGrp_Summ_ByTrt
+            - name: Comparison of Subjects by Treatment
+              level: 3
+              order: 2
+              analysisId: An03_02_AgeGrp_Comp_ByTrt
+        - name: Sex
+          level: 2
+          order: 4
+          sublist:
+            listItems:
+            - name: Summary of Subjects by Treatment
+              level: 3
+              order: 1
+              analysisId: An03_03_Sex_Summ_ByTrt
+            - name: Comparison of Subjects by Treatment
+              level: 3
+              order: 2
+              analysisId: An03_03_Sex_Comp_ByTrt
+        - name: Ethnicity
+          level: 2
+          order: 5
+          sublist:
+            listItems:
+            - name: Summary of Subjects by Treatment
+              level: 3
+              order: 1
+              analysisId: An03_04_Ethnic_Summ_ByTrt
+            - name: Comparison of Subjects by Treatment
+              level: 3
+              order: 2
+              analysisId: An03_04_Ethnic_Comp_ByTrt
+        - name: Race
+          level: 2
+          order: 6
+          sublist:
+            listItems:
+            - name: Summary of Subjects by Treatment
+              level: 3
+              order: 1
+              analysisId: An03_05_Race_Summ_ByTrt
+            - name: Comparison of Subjects by Treatment
+              level: 3
+              order: 2
+              analysisId: An03_05_Race_Comp_ByTrt
+        - name: Height
+          level: 2
+          order: 7
+          sublist:
+            listItems:
+            - name: Summary by Treatment
+              level: 3
+              order: 1
+              analysisId: An03_06_Height_Summ_ByTrt
+            - name: Comparison by Treatment
+              level: 3
+              order: 2
+              analysisId: An03_06_Height_Comp_ByTrt
+    - name: Overall Summary of Treatment-Emergent Adverse Events
+      level: 1
+      order: 2
+      outputId: Out14-3-1-1
+      sublist:
+        listItems:
+        - name: Summary of Subjects by Treatment
+          level: 2
+          order: 1
+          analysisId: An01_05_SAF_Summ_ByTrt
+version: 1
+otherListsOfContents:
+- name: List of Planned Outputs
+  label: LOPO
+  contentsList:
+    listItems:
+    - name: Summary of Demographics
+      level: 1
+      order: 1
+      outputId: Out14-1-1
+referenceDocuments:
+- name: Statistical Analysis Plan
+  id: CDISCPILOT01_SAP
+  location: ./sap.pdf
+- name: Clinical Study Report
+  id: CDISCPILOT01_CSR
+  location: ./csr-cdiscpilot01.pdf
+- name: at14-5-01.sas
+  id: at14-5-01_sas
+  location: ./at14-5-01.sas
+- name: AE Summary Table Shell
+  id: AE_Summary_Table_Shell
+  location: ./AE_Summary_Table_Shell.pdf
+terminologyExtensions:
+- id: TermEx1
+  sponsorTerms:
+  - id: TermEx1_1
+    submissionValue: ADDITIONAL EXAMPLE
+    description: The analysis was included in the set as an additional example to
+      demonstrate both a different type of analysis and sponsor terminology for analysis
+      reason.
+  enumeration: AnalysisReasonEnum
+analysisOutputCategorizations:
+- id: Catn_01_Grp
+  categories:
+  - id: Catn_01_Grp_1_Pop
+    label: Population Description
+  - id: Catn_01_Grp_2_Saf
+    label: Safety
+  - id: Catn_01_Grp_3_Eff
+    label: Efficacy
+  label: Group of Analyses
+- id: Catn_02_DClass
+  categories:
+  - id: Catn_02_Dclass_1_Sbj
+    label: Subject-level
+    subCategorizations:
+    - id: Catn_03_SbjDType
+      categories:
+      - id: Catn_03_SbjDType_1_Dm
+        label: Demographics
+      label: Subject-level Data Type
+  - id: Catn_02_Dclass_2_Evt
+    label: Events
+    subCategorizations:
+    - id: Catn_04_EvtDType
+      categories:
+      - id: Catn_04_EvtDType_1_Ae
+        label: Adverse Events
+      - id: Catn_04_EvtDType_2_Ce
+        label: Clinical Events
+      - id: Catn_04_EvtDType_3_Ds
+        label: Disposition
+      label: Events Data Type
+    - id: Catn_05_EvtAType
+      categories:
+      - id: Catn_05_EvtAType_1_Occ
+        label: Occurrence
+      - id: Catn_05_EvtAType_2_Tte
+        label: Time-to-Event
+      label: Events Analysis Type
+  - id: Catn_02_Dclass_3_Fnd
+    label: Findings
+    subCategorizations:
+    - id: Catn_06_FndDType
+      categories:
+      - id: Catn_06_FndDType_1_Vs
+        label: Vital Signs
+      - id: Catn_06_FndDType_2_Lb
+        label: Laboratory Tests
+      label: Findings Data Type
+    - id: Catn_07_FndAType
+      categories:
+      - id: Catn_07_FndAType_1_Chg
+        label: Change from Baseline
+      - id: Catn_07_FndAType_2_Sft
+        label: Shift Table
+      label: Findings Analysis Type
+  label: Analysis Data Class
+analysisSets:
+- name: Intent-to-Treat Population
+  label: ITT
+  id: AnalysisSet_01_ITT
+  level: 1
+  order: 1
+  condition:
+    dataset: ADSL
+    variable: ITTFL
+    comparator: EQ
+    value:
+    - Y
+- name: Safety Population
+  label: SAF
+  id: AnalysisSet_02_SAF
+  level: 1
+  order: 1
+  condition:
+    dataset: ADSL
+    variable: SAFFL
+    comparator: EQ
+    value:
+    - Y
+analysisGroupings:
+- name: Treatment
+  id: AnlsGrouping_01_Trt
+  dataDriven: false
+  groupingDataset: ADSL
+  groupingVariable: TRT01A
+  groups:
+  - name: Placebo
+    id: AnlsGrouping_01_Trt_1
+    level: 1
+    order: 1
+    condition:
+      dataset: ADSL
+      variable: TRT01A
+      comparator: EQ
+      value:
+      - Placebo
+  - name: Xanomeline Low Dose
+    id: AnlsGrouping_01_Trt_2
+    level: 1
+    order: 2
+    condition:
+      dataset: ADSL
+      variable: TRT01A
+      comparator: EQ
+      value:
+      - Xanomeline Low Dose
+  - name: Xanomeline High Dose
+    id: AnlsGrouping_01_Trt_3
+    level: 1
+    order: 3
+    condition:
+      dataset: ADSL
+      variable: TRT01A
+      comparator: EQ
+      value:
+      - Xanomeline High Dose
+- name: Gender
+  id: AnlsGrouping_02_Sex
+  dataDriven: false
+  groupingDataset: ADSL
+  groupingVariable: SEX
+  groups:
+  - name: Male
+    id: AnlsGrouping_02_Sex_1
+    level: 1
+    order: 1
+    condition:
+      dataset: ADSL
+      variable: SEX
+      comparator: EQ
+      value:
+      - M
+  - name: Female
+    id: AnlsGrouping_02_Sex_2
+    level: 1
+    order: 2
+    condition:
+      dataset: ADSL
+      variable: SEX
+      comparator: EQ
+      value:
+      - F
+- name: Age Group
+  id: AnlsGrouping_03_AgeGp
+  dataDriven: false
+  groupingDataset: ADSL
+  groupingVariable: AGEGR1
+  groups:
+  - name: < 65 years
+    id: AnlsGrouping_03_AgeGp_1
+    level: 1
+    order: 1
+    condition:
+      dataset: ADSL
+      variable: AGEGR1
+      comparator: EQ
+      value:
+      - <65
+  - name: ≥ 65 years
+    id: AnlsGrouping_03_AgeGp_2
+    level: 1
+    order: 2
+    condition:
+      dataset: ADSL
+      variable: AGEGR1
+      comparator: IN
+      value:
+      - 65-80
+      - '>80'
+- name: Primary Race
+  id: AnlsGrouping_04_Race
+  dataDriven: false
+  groupingDataset: ADSL
+  groupingVariable: RACE
+  groups:
+  - name: American Indian or Alaska Native
+    id: AnlsGrouping_04_Race_1
+    level: 1
+    order: 1
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - AMERICAN INDIAN OR ALASKA NATIVE
+  - name: Asian
+    id: AnlsGrouping_04_Race_2
+    level: 1
+    order: 2
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - ASIAN
+  - name: Black or African American
+    id: AnlsGrouping_04_Race_3
+    level: 1
+    order: 3
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - BLACK OR AFRICAN AMERICAN
+  - name: Native Hawaiian or Other Pacific Islander
+    id: AnlsGrouping_04_Race_4
+    level: 1
+    order: 4
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER
+  - name: White
+    id: AnlsGrouping_04_Race_5
+    level: 1
+    order: 5
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - WHITE
+  - name: Multiple
+    id: AnlsGrouping_04_Race_6
+    level: 1
+    order: 6
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - MULTIPLE
+  - name: Not Reported
+    id: AnlsGrouping_04_Race_7
+    level: 1
+    order: 7
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - NOT REPORTED
+  - name: Unknown
+    id: AnlsGrouping_04_Race_8
+    level: 1
+    order: 8
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - UNKNOWN
+  - name: Other
+    id: AnlsGrouping_04_Race_9
+    level: 1
+    order: 9
+    condition:
+      dataset: ADSL
+      variable: RACE
+      comparator: EQ
+      value:
+      - OTHER
+- name: Ethnicity
+  id: AnlsGrouping_05_Ethnic
+  dataDriven: false
+  groupingDataset: ADSL
+  groupingVariable: ETHNIC
+  groups:
+  - name: Hispanic or Latino
+    id: AnlsGrouping_05_Ethnic_1
+    level: 1
+    order: 1
+    condition:
+      dataset: ADSL
+      variable: ETHNIC
+      comparator: EQ
+      value:
+      - HISPANIC OR LATINO
+  - name: Not Hispanic or Latino
+    id: AnlsGrouping_05_Ethnic_2
+    level: 1
+    order: 2
+    condition:
+      dataset: ADSL
+      variable: ETHNIC
+      comparator: EQ
+      value:
+      - NOT HISPANIC OR LATINO
+methods:
+- name: Count by group for a categorical variable
+  description: Count across groups for a categorical variable, based on subject occurrence
+  label: Grouped count for categorical variable
+  id: Mth01_CatVar_Count_ByGrp
+  operations:
+  - name: Count of subjects
+    label: n
+    id: Mth01_CatVar_Count_ByGrp_1_n
+    order: 1
+    resultPattern: (N=XX)
+- name: Summary by group of a categorical variable
+  description: Descriptive summary statistics across groups for a categorical variable,
+    based on subject occurrence
+  label: Grouped summary of categorical variable
+  id: Mth01_CatVar_Summ_ByGrp
+  operations:
+  - name: Count of subjects
+    label: n
+    id: Mth01_CatVar_Summ_ByGrp_1_n
+    order: 1
+    resultPattern: XXX
+  - name: Percent of subjects
+    label: '%'
+    id: Mth01_CatVar_Summ_ByGrp_2_pct
+    order: 2
+    referencedOperationRelationships:
+    - id: Mth01_CatVar_Summ_ByGrp_2_pct_NUM
+      referencedOperationRole:
+        controlledTerm: NUMERATOR
+      operationId: Mth01_CatVar_Summ_ByGrp_1_n
+      description: The count operation whose result provides the numerator for calculation
+        of the percentage. The referenced analysis should be the analysis that contains
+        this percent operation.
+    - id: Mth01_CatVar_Summ_ByGrp_2_pct_DEN
+      referencedOperationRole:
+        controlledTerm: DENOMINATOR
+      operationId: Mth01_CatVar_Count_ByGrp_1_n
+      description: The count operation whose result provides the denominator for calculation
+        of the percentage. The referenced analysis should have the same analysis set
+        and subject grouping(s) as the analysis containing this percent operation.
+    resultPattern: ( XX.X)
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 7. GENERAL CONSIDERATIONS FOR DATA ANALYSES
+      pageNumbers:
+      - 9
+- name: Summary by group of a continuous variable
+  description: Descriptive summary statistics across groups for a continuous variable
+  label: Grouped summary of continuous variable
+  id: Mth02_ContVar_Summ_ByGrp
+  operations:
+  - name: Count of non-missing values
+    label: n
+    id: Mth02_ContVar_Summ_ByGrp_1_n
+    order: 1
+    resultPattern: XX
+  - name: Mean
+    label: Mean
+    id: Mth02_ContVar_Summ_ByGrp_2_Mean
+    order: 2
+    resultPattern: XX.X
+  - name: Standard deviation
+    label: SD
+    id: Mth02_ContVar_Summ_ByGrp_3_SD
+    order: 3
+    resultPattern: (XX.XX)
+  - name: Median
+    label: Median
+    id: Mth02_ContVar_Summ_ByGrp_4_Median
+    order: 4
+    resultPattern: XX.X
+  - name: First quartile
+    label: Q1
+    id: Mth02_ContVar_Summ_ByGrp_5_Q1
+    order: 5
+    resultPattern: XX.X
+  - name: Third quartile
+    label: Q3
+    id: Mth02_ContVar_Summ_ByGrp_6_Q3
+    order: 6
+    resultPattern: XX.X
+  - name: Minimum
+    label: Min
+    id: Mth02_ContVar_Summ_ByGrp_7_Min
+    order: 7
+    resultPattern: XX
+  - name: Maximum
+    label: Max
+    id: Mth02_ContVar_Summ_ByGrp_8_Max
+    order: 8
+    resultPattern: XX
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 7. GENERAL CONSIDERATIONS FOR DATA ANALYSES
+      pageNumbers:
+      - 9
+analyses:
+- name: Summary of Subjects by Treatment
+  id: An01_05_SAF_Summ_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth01_CatVar_Count_ByGrp
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 6. ANALYSIS POPULATIONS
+      pageNumbers:
+      - 9
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: true
+  results:
+  - operationId: Mth01_CatVar_Count_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '86'
+    formattedValue: (N=86)
+  - operationId: Mth01_CatVar_Count_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '84'
+    formattedValue: (N=84)
+  - operationId: Mth01_CatVar_Count_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '84'
+    formattedValue: (N=84)
+- name: Summary of Age by Treatment
+  label: Age
+  id: An03_01_Age_Summ_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth02_ContVar_Summ_ByGrp
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: AGE
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: true
+  results:
+  - operationId: Mth02_ContVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '86'
+    formattedValue: '86'
+  - operationId: Mth02_ContVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '84'
+    formattedValue: '84'
+  - operationId: Mth02_ContVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '84'
+    formattedValue: '84'
+  - operationId: Mth02_ContVar_Summ_ByGrp_2_Mean
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '75.2093023'
+    formattedValue: '75.2'
+  - operationId: Mth02_ContVar_Summ_ByGrp_2_Mean
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '75.6666667'
+    formattedValue: '75.7'
+  - operationId: Mth02_ContVar_Summ_ByGrp_2_Mean
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '74.3809524'
+    formattedValue: '74.4'
+  - operationId: Mth02_ContVar_Summ_ByGrp_3_SD
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '8.5901671'
+    formattedValue: ( 8.59)
+  - operationId: Mth02_ContVar_Summ_ByGrp_3_SD
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '8.2860506'
+    formattedValue: ( 8.29)
+  - operationId: Mth02_ContVar_Summ_ByGrp_3_SD
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '7.8860938'
+    formattedValue: ( 7.89)
+  - operationId: Mth02_ContVar_Summ_ByGrp_4_Median
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '76'
+    formattedValue: '76.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_4_Median
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '77.5'
+    formattedValue: '77.5'
+  - operationId: Mth02_ContVar_Summ_ByGrp_4_Median
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '76'
+    formattedValue: '76.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_5_Q1
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '69'
+    formattedValue: '69.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_5_Q1
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '71'
+    formattedValue: '71.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_5_Q1
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '70'
+    formattedValue: '70.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_6_Q3
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '82'
+    formattedValue: '82.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_6_Q3
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '82'
+    formattedValue: '82.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_6_Q3
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '80'
+    formattedValue: '80.0'
+  - operationId: Mth02_ContVar_Summ_ByGrp_7_Min
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '52'
+    formattedValue: '52'
+  - operationId: Mth02_ContVar_Summ_ByGrp_7_Min
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '51'
+    formattedValue: '51'
+  - operationId: Mth02_ContVar_Summ_ByGrp_7_Min
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '56'
+    formattedValue: '56'
+  - operationId: Mth02_ContVar_Summ_ByGrp_8_Max
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '89'
+    formattedValue: '89'
+  - operationId: Mth02_ContVar_Summ_ByGrp_8_Max
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '88'
+    formattedValue: '88'
+  - operationId: Mth02_ContVar_Summ_ByGrp_8_Max
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '88'
+    formattedValue: '88'
+- name: Comparison of Age by Treatment
+  label: Age
+  id: An03_01_Age_Comp_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth04_ContVar_Comp_Anova
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: AGE
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: false
+  programmingCode:
+    context: SAS Version 9.4
+    code: 'proc glm data=ADSL;
+
+      class TRT01A;
+
+      model AGE=TRT01A;
+
+      ods output OverallANOVA=results.ANOVAGE (where=(source = ''Model''));
+
+      run;'
+  results:
+  - operationId: Mth04_ContVar_Comp_Anova_1_pval
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+    rawValue: '0.5934357753'
+    formattedValue: '0.5934'
+- name: Summary of Subjects by Treatment and Age Group
+  label: Age Group
+  id: An03_02_AgeGrp_Summ_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth01_CatVar_Summ_ByGrp
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: true
+  - order: 2
+    groupingId: AnlsGrouping_03_AgeGp
+    resultsByGroup: true
+  referencedAnalysisOperations:
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_NUM
+    analysisId: An03_02_AgeGrp_Summ_ByTrt
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_DEN
+    analysisId: An01_05_SAF_Summ_ByTrt
+  results:
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_1
+    rawValue: '14'
+    formattedValue: '14'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_2
+    rawValue: '72'
+    formattedValue: '72'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_1
+    rawValue: '8'
+    formattedValue: '8'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_2
+    rawValue: '76'
+    formattedValue: '76'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_1
+    rawValue: '11'
+    formattedValue: '11'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_2
+    rawValue: '73'
+    formattedValue: '73'
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_1
+    rawValue: '16.27906976744186'
+    formattedValue: ( 16.3)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_2
+    rawValue: '83.72093023255815'
+    formattedValue: ( 83.7)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_1
+    rawValue: '9.523809523809524'
+    formattedValue: (  9.5)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_2
+    rawValue: '90.47619047619048'
+    formattedValue: ( 90.5)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_1
+    rawValue: '13.095238095238095'
+    formattedValue: ( 13.1)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_03_AgeGp
+      groupId: AnlsGrouping_03_AgeGp_2
+    rawValue: '86.9047619047619'
+    formattedValue: ( 86.9)
+- name: Comparison of Age Group by Treatment
+  label: Age Group
+  id: An03_02_AgeGrp_Comp_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth03_CatVar_Comp_PChiSq
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: false
+  - order: 2
+    groupingId: AnlsGrouping_03_AgeGp
+    resultsByGroup: false
+  programmingCode:
+    context: SAS Version 9.4
+    code: "proc freq data=ADSL;\ntable TRT01A*AGEGR1/chisq;\nexact pchi; \nods output\
+      \ PearsonChiSq=results.PCHIAGEGR1;\nrun;"
+  results:
+  - operationId: Mth03_CatVar_Comp_PChiSq_1_pval
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+    - groupingId: AnlsGrouping_03_AgeGp
+    rawValue: '0.4238788486'
+    formattedValue: '0.4239'
+- name: Summary of Subjects by Treatment and Sex
+  label: Sex
+  id: An03_03_Sex_Summ_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth01_CatVar_Summ_ByGrp
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: true
+  - order: 2
+    groupingId: AnlsGrouping_02_Sex
+    resultsByGroup: true
+  referencedAnalysisOperations:
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_NUM
+    analysisId: An03_03_Sex_Summ_ByTrt
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_DEN
+    analysisId: An01_05_SAF_Summ_ByTrt
+  results:
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_1
+    rawValue: '33'
+    formattedValue: '33'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_2
+    rawValue: '53'
+    formattedValue: '53'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_1
+    rawValue: '34'
+    formattedValue: '34'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_2
+    rawValue: '50'
+    formattedValue: '50'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_1
+    rawValue: '44'
+    formattedValue: '44'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_2
+    rawValue: '40'
+    formattedValue: '40'
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_1
+    rawValue: '38.372093023255815'
+    formattedValue: ( 38.4)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_2
+    rawValue: '61.627906976744185'
+    formattedValue: ( 61.6)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_1
+    rawValue: '40.476190476190474'
+    formattedValue: ( 40.5)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_2
+    rawValue: '59.523809523809526'
+    formattedValue: ( 59.5)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_1
+    rawValue: '52.38095238095238'
+    formattedValue: ( 52.4)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_02_Sex
+      groupId: AnlsGrouping_02_Sex_2
+    rawValue: '47.61904761904762'
+    formattedValue: ( 47.6)
+- name: Comparison of Sex by Treatment
+  label: Sex
+  id: An03_03_Sex_Comp_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth03_CatVar_Comp_PChiSq
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: false
+  - order: 2
+    groupingId: AnlsGrouping_02_Sex
+    resultsByGroup: false
+  programmingCode:
+    context: SAS Version 9.4
+    code: "proc freq data=ADSL;\ntable TRT01A*SEX/chisq;\nexact pchi; \nods output\
+      \ PearsonChiSq=results.PCHISEX;\nrun;"
+  results:
+  - operationId: Mth03_CatVar_Comp_PChiSq_1_pval
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+    - groupingId: AnlsGrouping_02_Sex
+    rawValue: '0.1408598286'
+    formattedValue: '0.1409'
+- name: Summary of Subjects by Treatment and Ethnicity
+  label: Ethnicity
+  id: An03_04_Ethnic_Summ_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth01_CatVar_Summ_ByGrp
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: true
+  - order: 2
+    groupingId: AnlsGrouping_05_Ethnic
+    resultsByGroup: true
+  referencedAnalysisOperations:
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_NUM
+    analysisId: An03_04_Ethnic_Summ_ByTrt
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_DEN
+    analysisId: An01_05_SAF_Summ_ByTrt
+  results:
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_1
+    rawValue: '3'
+    formattedValue: '3'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_2
+    rawValue: '83'
+    formattedValue: '83'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_1
+    rawValue: '3'
+    formattedValue: '3'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_2
+    rawValue: '81'
+    formattedValue: '81'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_1
+    rawValue: '6'
+    formattedValue: '6'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_2
+    rawValue: '78'
+    formattedValue: '78'
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_1
+    rawValue: '3.488372093023256'
+    formattedValue: (  3.5)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_2
+    rawValue: '96.51162790697674'
+    formattedValue: ( 96.5)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_1
+    rawValue: '3.5714285714285716'
+    formattedValue: (  3.6)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_2
+    rawValue: '96.42857142857143'
+    formattedValue: ( 96.4)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_1
+    rawValue: '7.142857142857143'
+    formattedValue: (  7.1)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_05_Ethnic
+      groupId: AnlsGrouping_05_Ethnic_2
+    rawValue: '92.85714285714286'
+    formattedValue: ( 92.9)
+- name: Comparison of Ethnicity by Treatment
+  label: Ethnicity
+  id: An03_04_Ethnic_Comp_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth03_CatVar_Comp_PChiSq
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: false
+  - order: 2
+    groupingId: AnlsGrouping_05_Ethnic
+    resultsByGroup: false
+  programmingCode:
+    context: SAS Version 9.4
+    code: "proc freq data=ADSL;\ntable TRT01A*ETHNIC/chisq;\nexact pchi; \nods output\
+      \ PearsonChiSq=results.PCHIETHNIC;\nrun;"
+  results:
+  - operationId: Mth03_CatVar_Comp_PChiSq_1_pval
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+    - groupingId: AnlsGrouping_05_Ethnic
+    rawValue: '0.4423119445'
+    formattedValue: '0.4423'
+- name: Summary of Subjects by Treatment and Race
+  label: Race
+  id: An03_05_Race_Summ_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth01_CatVar_Summ_ByGrp
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: true
+  - order: 2
+    groupingId: AnlsGrouping_04_Race
+    resultsByGroup: true
+  referencedAnalysisOperations:
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_NUM
+    analysisId: An03_05_Race_Summ_ByTrt
+  - referencedOperationRelationshipId: Mth01_CatVar_Summ_ByGrp_2_pct_DEN
+    analysisId: An01_05_SAF_Summ_ByTrt
+  results:
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_1
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_2
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_3
+    rawValue: '8'
+    formattedValue: '8'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_4
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_5
+    rawValue: '78'
+    formattedValue: '78'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_6
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_7
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_8
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_9
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_1
+    rawValue: '1'
+    formattedValue: '1'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_2
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_3
+    rawValue: '9'
+    formattedValue: '9'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_4
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_5
+    rawValue: '74'
+    formattedValue: '74'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_6
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_7
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_8
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_9
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_1
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_2
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_3
+    rawValue: '6'
+    formattedValue: '6'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_4
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_5
+    rawValue: '78'
+    formattedValue: '78'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_6
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_7
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_8
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_9
+    rawValue: '0'
+    formattedValue: '0'
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_1
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_2
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_3
+    rawValue: '9.30232558139535'
+    formattedValue: (  9.3)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_4
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_5
+    rawValue: '90.69767441860465'
+    formattedValue: ( 90.7)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_6
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_7
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_8
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_9
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_1
+    rawValue: '1.1904761904761905'
+    formattedValue: (  1.2)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_2
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_3
+    rawValue: '10.714285714285714'
+    formattedValue: ( 10.7)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_4
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_5
+    rawValue: '88.0952380952381'
+    formattedValue: ( 88.1)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_6
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_7
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_8
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_9
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_1
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_2
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_3
+    rawValue: '7.142857142857143'
+    formattedValue: (  7.1)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_4
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_5
+    rawValue: '92.85714285714286'
+    formattedValue: ( 92.9)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_6
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_7
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_8
+    rawValue: '0'
+    formattedValue: (  0.0)
+  - operationId: Mth01_CatVar_Summ_ByGrp_2_pct
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    - groupingId: AnlsGrouping_04_Race
+      groupId: AnlsGrouping_04_Race_9
+    rawValue: '0'
+    formattedValue: (  0.0)
+- name: Comparison of Race by Treatment
+  label: Race
+  id: An03_05_Race_Comp_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth03_CatVar_Comp_PChiSq
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: USUBJID
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: false
+  - order: 2
+    groupingId: AnlsGrouping_04_Race
+    resultsByGroup: false
+  programmingCode:
+    context: SAS Version 9.4
+    code: "proc freq data=ADSL;\ntable TRT01A*RACE/chisq;\nexact pchi; \nods output\
+      \ PearsonChiSq=results.PCHIRACE;\nrun;"
+  results:
+  - operationId: Mth03_CatVar_Comp_PChiSq_1_pval
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+    - groupingId: AnlsGrouping_04_Race
+    rawValue: '0.6040304365'
+    formattedValue: '0.6040'
+- name: Summary of Height by Treatment
+  label: Height
+  id: An03_06_Height_Summ_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth02_ContVar_Summ_ByGrp
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: HEIGHTBL
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: true
+  results:
+  - operationId: Mth02_ContVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '86'
+    formattedValue: '86'
+  - operationId: Mth02_ContVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '84'
+    formattedValue: '84'
+  - operationId: Mth02_ContVar_Summ_ByGrp_1_n
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '84'
+    formattedValue: '84'
+  - operationId: Mth02_ContVar_Summ_ByGrp_2_Mean
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '162.5732558'
+    formattedValue: '162.6'
+  - operationId: Mth02_ContVar_Summ_ByGrp_2_Mean
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '165.8202381'
+    formattedValue: '165.8'
+  - operationId: Mth02_ContVar_Summ_ByGrp_2_Mean
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '163.4333333'
+    formattedValue: '163.4'
+  - operationId: Mth02_ContVar_Summ_ByGrp_3_SD
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '11.5223611'
+    formattedValue: (11.52)
+  - operationId: Mth02_ContVar_Summ_ByGrp_3_SD
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '10.41924'
+    formattedValue: (10.42)
+  - operationId: Mth02_ContVar_Summ_ByGrp_3_SD
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '10.1313516'
+    formattedValue: (10.13)
+  - operationId: Mth02_ContVar_Summ_ByGrp_4_Median
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '162.6'
+    formattedValue: '162.6'
+  - operationId: Mth02_ContVar_Summ_ByGrp_4_Median
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '162.2'
+    formattedValue: '162.2'
+  - operationId: Mth02_ContVar_Summ_ByGrp_4_Median
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '165.1'
+    formattedValue: '165.1'
+  - operationId: Mth02_ContVar_Summ_ByGrp_5_Q1
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '153.7'
+    formattedValue: '153.7'
+  - operationId: Mth02_ContVar_Summ_ByGrp_5_Q1
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '157.5'
+    formattedValue: '157.5'
+  - operationId: Mth02_ContVar_Summ_ByGrp_5_Q1
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '157.5'
+    formattedValue: '157.5'
+  - operationId: Mth02_ContVar_Summ_ByGrp_6_Q3
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '171.5'
+    formattedValue: '171.5'
+  - operationId: Mth02_ContVar_Summ_ByGrp_6_Q3
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '170.2'
+    formattedValue: '170.2'
+  - operationId: Mth02_ContVar_Summ_ByGrp_6_Q3
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '172.85'
+    formattedValue: '172.9'
+  - operationId: Mth02_ContVar_Summ_ByGrp_7_Min
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '137.2'
+    formattedValue: '137.2'
+  - operationId: Mth02_ContVar_Summ_ByGrp_7_Min
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '135.9'
+    formattedValue: '135.9'
+  - operationId: Mth02_ContVar_Summ_ByGrp_7_Min
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '146.1'
+    formattedValue: '146.1'
+  - operationId: Mth02_ContVar_Summ_ByGrp_8_Max
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_1
+    rawValue: '185.4'
+    formattedValue: '185.4'
+  - operationId: Mth02_ContVar_Summ_ByGrp_8_Max
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_2
+    rawValue: '195.6'
+    formattedValue: '195.6'
+  - operationId: Mth02_ContVar_Summ_ByGrp_8_Max
+    resultGroups:
+    - groupingId: AnlsGrouping_01_Trt
+      groupId: AnlsGrouping_01_Trt_3
+    rawValue: '190.5'
+    formattedValue: '190.5'
+- name: Comparison of Height by Treatment
+  label: Height
+  id: An03_06_Height_Comp_ByTrt
+  reason:
+    controlledTerm: SPECIFIED IN SAP
+  purpose:
+    controlledTerm: PRIMARY OUTCOME MEASURE
+  methodId: Mth04_ContVar_Comp_Anova
+  version: 1
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_SAP
+    pageRefs:
+    - refType: PhysicalRef
+      label: 9.2. Demographic and Baseline Characteristics
+      pageNumbers:
+      - 13
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_02_Dclass_1_Sbj
+  - Catn_03_SbjDType_1_Dm
+  dataset: ADSL
+  variable: HEIGHTBL
+  analysisSetId: AnalysisSet_02_SAF
+  orderedGroupings:
+  - order: 1
+    groupingId: AnlsGrouping_01_Trt
+    resultsByGroup: false
+  programmingCode:
+    context: SAS Version 9.4
+    code: 'proc glm data=ADSL;
+
+      class TRT01A;
+
+      model HEIGHTBL=TRT01A;
+
+      ods output OverallANOVA=results.ANOVHEIGHTBL (where=(source = ''Model''));
+
+      run;'
+globalDisplaySections:
+- sectionType: Header
+  subSections:
+  - id: GlobalDisp_Header_1
+    text: Study - CDISC 360
+  - id: GlobalDisp_Header_2
+    text: Page x of y
+- sectionType: Title
+  subSections:
+  - id: GlobalDisp_Title_1
+    text: Safety Population
+- sectionType: Footer
+  subSections:
+  - id: GlobalDisp_Footer_1
+    text: 'Program: <pid>.sas, Output: <pid><oid>.rtf, Generated on: DDMONYYYY:HH:MM'
+outputs:
+- name: Summary of Demographics
+  id: Out14-1-1
+  displays:
+  - order: 1
+    display:
+      name: Demographics
+      label: Demog
+      id: Disp14-1-1
+      version: 1
+      displayTitle: Summary of Demographics
+      displaySections:
+      - sectionType: Header
+        orderedSubSections:
+        - order: 1
+          subSectionId: GlobalDisp_Header_1
+        - order: 2
+          subSectionId: GlobalDisp_Header_2
+      - sectionType: Title
+        orderedSubSections:
+        - order: 1
+          subSection:
+            id: Disp14-1-1_Title_1
+            text: Table 14.1.1
+        - order: 2
+          subSection:
+            id: Disp14-1-1_Title_2
+            text: Summary of Demographics
+        - order: 3
+          subSectionId: GlobalDisp_Title_1
+      - sectionType: Footer
+        orderedSubSections:
+        - order: 1
+          subSection:
+            id: Disp14-1-1_Footer_1
+            text: 'Source dataset: adsl, Generated on: DDMONYYYY:HH:MM'
+        - order: 2
+          subSectionId: GlobalDisp_Footer_1
+      - sectionType: Rowlabel Header
+        orderedSubSections:
+        - order: 1
+          subSection:
+            id: Disp14-1-1_RLbHd_1
+            text: Characteristics
+  version: 1
+  fileSpecifications:
+  - name: t14-1-1-demog (RTF)
+    label: t14-1-1-demog
+    fileType:
+      controlledTerm: rtf
+    location: ./t14-1-1-demog.rtf
+  - name: t14-1-1-demog (PDF)
+    label: t14-1-1-demog
+    fileType:
+      controlledTerm: pdf
+    location: ./t14-1-1-demog.pdf
+  categoryIds:
+  - Catn_01_Grp_1_Pop
+  - Catn_03_SbjDType_1_Dm
+  documentRefs:
+  - referenceDocumentId: CDISCPILOT01_CSR
+    pageRefs:
+    - refType: PhysicalRef
+      label: Table 14-2.01
+      firstPage: 46
+      lastPage: 48
