@@ -242,7 +242,7 @@ classes:
       whereClauses:
         any_of:
           - range: ReferencedAnalysisSet
-          - range: WhereClause    
+          - range: WhereClause
 
   DataSubset:
     description: A subset of data identified by selection criteria for inclusion in the analysis.
@@ -276,7 +276,7 @@ classes:
       whereClauses:
         any_of:
           - range: ReferencedDataSubset
-          - range: WhereClause      
+          - range: WhereClause
 
   GroupingFactor:
     description: A factor used to subdivide either the subject population or data records in an analysis dataset for analysis.
@@ -988,9 +988,9 @@ slots:
     multivalued: true
 
   subClauseId:
-    description: The identifier of the analysis set, data subset or group referenced in the compound expression.  
+    description: The identifier of the analysis set, data subset or group referenced in the compound expression.
     inlined: false
-    inlined_as_list: false  
+    inlined_as_list: false
     any_of:
       - range: AnalysisSet
       - range: DataSubset
@@ -1083,7 +1083,7 @@ slots:
   refType:
     description: The type of reference for page references.
     required: true
-    # range: PageRefTypeEnum
+    range: PageRefTypeEnum
 
   pageNames:
     description: One or more named document references which each correspond with a page.
@@ -1489,10 +1489,10 @@ enums:
       OutputFileTypeEnum:
         description: The file format of the file containing output from analyses.
 
-  # PageRefTypeEnum:
-  #   description: Type of reference for page references.
-  #   permissible_values:
-  #     PhysicalRef:
-  #       description: References are to page numbers.
-  #     NamedDestination:
-  #       description: References are to named destinations in the referenced document.
+  PageRefTypeEnum:
+    description: Type of reference for page references.
+    permissible_values:
+      PhysicalRef:
+        description: References are to page numbers.
+      NamedDestination:
+        description: References are to named destinations in the referenced document.
