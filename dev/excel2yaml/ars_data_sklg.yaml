@@ -1,0 +1,321 @@
+id: RE001
+name: "Phase 3 Clinical Trial Report"
+description: "Reporting event for the final analysis of our Phase 3 clinical trial"
+version: 1
+mainListOfContents:
+  name: "Main Table of Contents"
+  description: "Primary list of analyses and outputs"
+  contentsList:
+    listItems:
+      - level: 1
+        order: 1
+        name: "Efficacy Analyses"
+        sublist:
+          listItems:
+            - level: 2
+              order: 1
+              name: "Primary Endpoint Analysis"
+              analysisId: A001
+            - level: 2
+              order: 2
+              name: "Secondary Endpoint Analyses"
+              sublist:
+                listItems:
+                  - level: 3
+                    order: 1
+                    name: "Secondary Endpoint 1"
+                    analysisId: A002
+                  - level: 3
+                    order: 2
+                    name: "Secondary Endpoint 2"
+                    analysisId: A003
+      - level: 1
+        order: 2
+        name: "Safety Analyses"
+        sublist:
+          listItems:
+            - level: 2
+              order: 1
+              name: "Adverse Events Summary"
+              outputId: O001
+
+otherListsOfContents:
+  - name: "List of Tables"
+    description: "List of all tables in the report"
+    contentsList:
+      listItems:
+        - level: 1
+          order: 1
+          name: "Efficacy Tables"
+          sublist:
+            listItems:
+              - level: 2
+                order: 1
+                name: "Table 1. Primary Endpoint Results"
+                outputId: O002
+  - name: "List of Figures"
+    description: "List of all figures in the report"
+    contentsList:
+      listItems:
+        - level: 1
+          order: 1
+          name: "Safety Figures"
+          sublist:
+            listItems:
+              - level: 2
+                order: 1
+                name: "Figure 1. Adverse Events Over Time"
+                outputId: O003
+
+referenceDocuments:
+  - id: RD001
+    name: "Statistical Analysis Plan"
+    description: "Detailed plan for statistical analyses"
+    location: "file://documents/SAP_v1.0.pdf"
+  - id: RD002
+    name: "Analysis Programs"
+    description: "SAS programs used for analyses"
+    location: "file://programs/"
+
+terminologyExtensions:
+  - id: TE001
+    enumeration: AnalysisPurposeEnum
+    sponsorTerms:
+      - id: ST001
+        submissionValue: "TERTIARY_OUTCOME_MEASURE"
+        description: "Outcome measure used to evaluate tertiary endpoints"
+
+analysisOutputCategorizations:
+  - id: AOC001
+    label: "Analysis Type"
+    categories:
+      - id: C001
+        label: "Efficacy"
+      - id: C002
+        label: "Safety"
+  - id: AOC002
+    label: "Study Phase"
+    categories:
+      - id: C003
+        label: "Screening"
+      - id: C004
+        label: "Treatment"
+      - id: C005
+        label: "Follow-up"
+
+analysisSets:
+  - id: AS001
+    name: "Intent-to-Treat Population"
+    description: "All randomized subjects"
+    level: 1
+    order: 1
+  - id: AS002
+    name: "Per-Protocol Population"
+    description: "Subjects who completed the study without major protocol violations"
+    level: 1
+    order: 2
+
+dataSubsets:
+  - id: DS001
+    name: "Completed Treatment"
+    description: "Subjects who completed the full course of treatment"
+    level: 1
+    order: 1
+    condition:
+      dataset: "ADSL"
+      variable: "COMPLFL"
+      comparator: EQ
+      value:
+        - "Y"
+  - id: DS002
+    name: "High Dose Group with AEs"
+    description: "Subjects in the high dose group who experienced any adverse event"
+    level: 1
+    order: 2
+    compoundExpression:
+      type: "CompoundSetExpression"
+      logicalOperator: "AND"
+      clauses:
+        - dataset: "ADSL"
+          variable: "TRTA"
+          comparator: EQ
+          value:
+            - "High Dose"
+        - dataset: "ADAE"
+          variable: "AOCCFL"
+          comparator: EQ
+          value:
+            - "Y"
+
+analysisGroupings:
+  - id: GF001
+    name: "Treatment Arm"
+    description: "Grouping factor for treatment arms"
+    groupingDataset: "ADSL"
+    groupingVariable: "TRT01P"
+    dataDriven: false
+    groups:
+      - id: G001
+        name: "Treatment A"
+        level: 1
+        order: 1
+      - id: G002
+        name: "Placebo"
+        level: 2
+        order: 2
+  - id: GF002
+    name: "Age Group"
+    description: "Age categories"
+    groupingDataset: "ADSL"
+    groupingVariable: "AGEGR1"
+    dataDriven: true
+
+methods:
+  - id: M001
+    name: "ANCOVA"
+    description: "Analysis of Covariance"
+    operations:
+      - id: OP001
+        name: "Least Squares Mean Difference"
+        order: 1
+      - id: OP002
+        name: "95% Confidence Interval"
+        order: 2
+      - id: OP003
+        name: "P-value"
+        order: 3
+  - id: M002
+    name: "Logistic Regression"
+    description: "Logistic regression analysis"
+    operations:
+      - id: OP004
+        name: "Odds Ratio"
+        order: 1
+      - id: OP005
+        name: "95% Confidence Interval"
+        order: 2
+      - id: OP006
+        name: "P-value"
+        order: 3
+
+analyses:
+  - id: A001
+    name: "Primary Efficacy Analysis"
+    description: "Analysis of the primary endpoint"
+    reason:
+      controlledTerm: "SPECIFIED IN PROTOCOL"
+    purpose:
+      controlledTerm: "PRIMARY OUTCOME MEASURE"
+    dataset: "ADEFF"
+    variable: "CHGBASE"
+    analysisSetId: AS001
+    dataSubsetId: DS001
+    orderedGroupings:
+      - order: 1
+        groupingId: GF001
+        resultsByGroup: true
+    methodId: M001
+    programmingCode:
+      codeReference:
+        documentId: RD002
+        location: "primary_efficacy.sas"
+    results:
+      - operationId: OP001
+        resultGroups:
+          - groupingId: GF001
+            groupId: G001
+          - groupingId: GF001
+            groupId: G002
+        rawValue: "2.5"
+        formattedValue: "2.5 (1.2, 3.8)"
+      - operationId: OP003
+        rawValue: "0.001"
+        formattedValue: "p < 0.001"
+  - id: A002
+    name: "Secondary Efficacy Analysis"
+    description: "Analysis of the key secondary endpoint"
+    reason:
+      controlledTerm: "SPECIFIED IN PROTOCOL"
+    purpose:
+      controlledTerm: "SECONDARY OUTCOME MEASURE"
+    dataset: "ADEFF"
+    variable: "RESPFL"
+    analysisSetId: AS001
+    methodId: M002
+    programmingCode:
+      codeReference:
+        documentId: RD002
+        location: "secondary_efficacy.sas"
+    results:
+      - operationId: OP004
+        rawValue: "1.8"
+        formattedValue: "1.8 (1.2, 2.7)"
+      - operationId: OP006
+        rawValue: "0.003"
+        formattedValue: "p = 0.003"
+
+outputs:
+  - id: O001
+    name: "Adverse Events Summary Table"
+    description: "Summary of adverse events by treatment arm"
+    fileSpecifications:
+      - name: "AE Summary Table"
+        fileType:
+          controlledTerm: "rtf"
+    displays:
+      - order: 1
+        display:
+          id: D001
+          name: "AE Summary Table"
+          displayTitle: "Table 1. Summary of Adverse Events"
+          displaySections:
+            - sectionType: "Title"
+              orderedSubSections:
+                - order: 1
+                  subSection:
+                    id: SS001
+                    text: "Table 1. Summary of Adverse Events"
+            - sectionType: "Footer"
+              orderedSubSections:
+                - order: 1
+                  subSection:
+                    id: SS002
+                    text: "AE: Adverse Event"
+  - id: O002
+    name: "Primary Efficacy Results Figure"
+    description: "Forest plot of primary efficacy results"
+    fileSpecifications:
+      - name: "Primary Efficacy Forest Plot"
+        fileType:
+          controlledTerm: "pdf"
+    displays:
+      - order: 1
+        display:
+          id: D002
+          name: "Primary Efficacy Forest Plot"
+          displayTitle: "Figure 1. Forest Plot of Primary Efficacy Results"
+          displaySections:
+            - sectionType: "Title"
+              orderedSubSections:
+                - order: 1
+                  subSection:
+                    id: SS003
+                    text: "Figure 1. Forest Plot of Primary Efficacy Results"
+            - sectionType: "Footer"
+              orderedSubSections:
+                - order: 1
+                  subSection:
+                    id: SS004
+                    text: "CI: Confidence Interval"
+
+globalDisplaySections:
+  - sectionType: "Footer"
+    subSections:
+      - id: GDS001
+        text: "Confidential - Do not distribute"
+  - sectionType: "Header"
+    subSections:
+      - id: GDS002
+        text: "Study XYZ-123"
+      - id: GDS003
+        text: "Page [Page] of [TotalPages]"

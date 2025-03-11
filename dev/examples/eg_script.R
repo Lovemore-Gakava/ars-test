@@ -84,3 +84,9 @@ readARS("dev/build/data_change_simple_sub_added.json", "dev/examples", "dev/exam
 
 debugonce(readARS)
 readARS("dev/examples/Common Safety Displays.json", "dev/examples", "dev/examples")
+
+siera::readARS("dev/excel2yaml/csd_reimagined.json", "dev/excel2yaml", "dev/excel2yaml")
+
+siera::readARS("dev/excel2yaml/csd_sklg.json", "dev/excel2yaml", "dev/excel2yaml")
+
+siera::readARS("dev/excel2yaml/ars_data_sklg.json", "dev/excel2yaml", "dev/excel2yaml")
