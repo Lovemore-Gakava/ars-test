@@ -7,3 +7,8 @@ ARS_V1_SAF$analyses
 
 
 ars <- fromJSON("dev/build/ars_ldm.json")
+
+# csd_data <- fromJSON("dev/build/dev/excel2yaml/csd_reimagined.json")
+#
+play <- fromJSON("dev/build/ars_ldm.json")
+

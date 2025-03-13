@@ -1,0 +1,328 @@
+{
+  "name": "Phase 3 Clinical Trial Report",
+  "description": "Reporting event for the final analysis of our Phase 3 clinical trial",
+  "id": "RE001",
+  "mainListOfContents": {
+    "name": "Main Table of Contents",
+    "description": "Primary list of analyses and outputs",
+    "contentsList": {
+      "listItems": [
+        {
+          "name": "Efficacy Analyses",
+          "level": 1,
+          "order": 1,
+          "sublist": {
+            "listItems": [
+              {
+                "name": "Primary Endpoint Analysis",
+                "level": 2,
+                "order": 1,
+                "analysisId": "A001"
+              },
+              {
+                "name": "Secondary Endpoint Analyses",
+                "level": 2,
+                "order": 2,
+                "sublist": {
+                  "listItems": [
+                    {
+                      "name": "Secondary Endpoint 1",
+                      "level": 3,
+                      "order": 1,
+                      "analysisId": "A002"
+                    },
+                    {
+                      "name": "Secondary Endpoint 2",
+                      "level": 3,
+                      "order": 2,
+                      "analysisId": "A003"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "name": "Safety Analyses",
+          "level": 1,
+          "order": 2,
+          "sublist": {
+            "listItems": [
+              {
+                "name": "Adverse Events Summary",
+                "level": 2,
+                "order": 1,
+                "outputId": "O001"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "version": 1,
+  "otherListsOfContents": [
+    {
+      "name": "List of Tables",
+      "description": "List of all tables in the report",
+      "contentsList": {
+        "listItems": [
+          {
+            "name": "Efficacy Tables",
+            "level": 1,
+            "order": 1,
+            "sublist": {
+              "listItems": [
+                {
+                  "name": "Table 1. Primary Endpoint Results",
+                  "level": 2,
+                  "order": 1,
+                  "outputId": "O002"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "List of Figures",
+      "description": "List of all figures in the report",
+      "contentsList": {
+        "listItems": [
+          {
+            "name": "Safety Figures",
+            "level": 1,
+            "order": 1,
+            "sublist": {
+              "listItems": [
+                {
+                  "name": "Figure 1. Adverse Events Over Time",
+                  "level": 2,
+                  "order": 1,
+                  "outputId": "O003"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "referenceDocuments": [
+    {
+      "name": "Statistical Analysis Plan",
+      "description": "Detailed plan for statistical analyses",
+      "id": "RD001",
+      "location": "file://documents/SAP_v1.0.pdf"
+    }
+  ],
+  "terminologyExtensions": [
+    {
+      "id": "TE001",
+      "sponsorTerms": [
+        {
+          "id": "ST001",
+          "submissionValue": "TERTIARY_OUTCOME_MEASURE",
+          "description": "Outcome measure used to evaluate tertiary endpoints"
+        }
+      ],
+      "enumeration": "AnalysisPurposeEnum"
+    }
+  ],
+  "analysisOutputCategorizations": [
+    {
+      "id": "AOC001",
+      "categories": [
+        {
+          "id": "C001",
+          "label": "Efficacy"
+        },
+        {
+          "id": "C002",
+          "label": "Safety"
+        }
+      ],
+      "label": "Analysis Type"
+    }
+  ],
+  "analysisSets": [
+    {
+      "name": "Intent-to-Treat Population",
+      "description": "All randomized subjects",
+      "id": "AS001",
+      "level": 1,
+      "order": 1
+    }
+  ],
+  "dataSubsets": [
+    {
+      "name": "Completed Treatment",
+      "description": "Subjects who completed the full course of treatment",
+      "id": "DS001",
+      "level": 1,
+      "order": 1,
+      "condition": {
+        "dataset": "ADSL",
+        "variable": "COMPLFL",
+        "comparator": "EQ",
+        "value": [
+          "Y"
+        ]
+      }
+    }
+  ],
+  "analysisGroupings": [
+    {
+      "name": "Treatment Arm",
+      "description": "Grouping factor for treatment arms",
+      "id": "GF001",
+      "dataDriven": false,
+      "groupingDataset": "ADSL",
+      "groupingVariable": "TRT01P",
+      "groups": [
+        {
+          "name": "Treatment A",
+          "id": "G001",
+          "level": 1,
+          "order": 1
+        },
+        {
+          "name": "Placebo",
+          "id": "G002",
+          "level": 2,
+          "order": 2
+        }
+      ]
+    }
+  ],
+  "methods": [
+    {
+      "name": "ANCOVA",
+      "description": "Analysis of Covariance",
+      "id": "M001",
+      "operations": [
+        {
+          "name": "Least Squares Mean Difference",
+          "id": "OP001",
+          "order": 1
+        },
+        {
+          "name": "95% Confidence Interval",
+          "id": "OP002",
+          "order": 2
+        },
+        {
+          "name": "P-value",
+          "id": "OP003",
+          "order": 3
+        }
+      ]
+    }
+  ],
+  "analyses": [
+    {
+      "name": "Primary Efficacy Analysis",
+      "description": "Analysis of the primary endpoint",
+      "id": "A001",
+      "reason": {
+        "controlledTerm": "SPECIFIED IN PROTOCOL"
+      },
+      "purpose": {
+        "controlledTerm": "PRIMARY OUTCOME MEASURE"
+      },
+      "methodId": "M001",
+      "dataset": "ADEFF",
+      "variable": "CHGBASE",
+      "analysisSetId": "AS001",
+      "orderedGroupings": [
+        {
+          "order": 1,
+          "groupingId": "GF001",
+          "resultsByGroup": true
+        }
+      ],
+      "results": [
+        {
+          "operationId": "OP001",
+          "resultGroups": [
+            {
+              "groupingId": "GF001",
+              "groupId": "G001"
+            },
+            {
+              "groupingId": "GF001",
+              "groupId": "G002"
+            }
+          ],
+          "rawValue": "2.5",
+          "formattedValue": "2.5 (1.2, 3.8)"
+        }
+      ]
+    }
+  ],
+  "globalDisplaySections": [
+    {
+      "sectionType": "Footer",
+      "subSections": [
+        {
+          "id": "GDS001",
+          "text": "Confidential - Do not distribute"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Adverse Events Summary Table",
+      "description": "Summary of adverse events by treatment arm",
+      "id": "O001",
+      "displays": [
+        {
+          "order": 1,
+          "display": {
+            "name": "AE Summary Table",
+            "id": "D001",
+            "displayTitle": "Table 1. Summary of Adverse Events",
+            "displaySections": [
+              {
+                "sectionType": "Title",
+                "orderedSubSections": [
+                  {
+                    "order": 1,
+                    "subSection": {
+                      "id": "SS001",
+                      "text": "Table 1. Summary of Adverse Events"
+                    }
+                  }
+                ]
+              },
+              {
+                "sectionType": "Footer",
+                "orderedSubSections": [
+                  {
+                    "order": 1,
+                    "subSection": {
+                      "id": "SS002",
+                      "text": "AE: Adverse Event"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "fileSpecifications": [
+        {
+          "name": "AE Summary Table",
+          "fileType": {
+            "controlledTerm": "rtf"
+          }
+        }
+      ]
+    }
+  ],
+  "@type": "ReportingEvent"
+}

@@ -1,24 +1,24 @@
 
 # Programme:    Generate code to produce ARD for Out14-1-1
 # Output:       Summary of Demographics
-# Date created: 2025-03-05 17:20:51
+# Date created: 2025-03-11 15:12:10
 
 
-  
+
 
 # load libraries ----
 library(tidyverse)
 library(readxl)
 library(splitstackshape)
 library(readr)
-  
+
 # load ADaM ----
 ADSL <- read_csv('dev/examples/ADSL.csv')
 ADAE <- read_csv('dev/examples/ADAE.csv') %>%
   rename(TRT01A = TRTA)
 ADVS <- read_csv('dev/examples/ADVS.csv') %>%
   rename(TRT01A = TRTA)
-  
+
 
 # Analysis An01_05_SAF_Summ_ByTrt----
 # Apply Analysis Set ---
@@ -37,8 +37,8 @@ df1_An01_05_SAF_Summ_ByTrt <- df_An01_05_SAF_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An01_05_SAF_Summ_ByTrt <- df1_An01_05_SAF_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Count_ByGrp_1_n
 # Operation name:         Count by group for a categorical variable
 # Operation description:  Count across groups for a categorical variable, based on subject occurrence
@@ -51,7 +51,7 @@ df3_An01_05_SAF_Summ_ByTrt_Mth01_CatVar_Count_ByGrp_1_n <- df2_An01_05_SAF_Summ_
                OutputId = 'Out14-1-1',
                pattern = '(N=XX)')
 
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An01_05_SAF_Summ_ByTrt <- dplyr::bind_rows(df3_An01_05_SAF_Summ_ByTrt_Mth01_CatVar_Count_ByGrp_1_n) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -73,8 +73,8 @@ df1_An03_01_Age_Summ_ByTrt <- df_An03_01_Age_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An03_01_Age_Summ_ByTrt <- df1_An03_01_Age_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -87,7 +87,7 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_1_n <- df2_An03_01_Age_Summ_
                OutputId = 'Out14-1-1',
                pattern = 'XX')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_2_Mean
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -100,7 +100,7 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_2_Mean <- df2_An03_01_Age_Su
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_3_SD
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -113,7 +113,7 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_3_SD <- df2_An03_01_Age_Summ
                OutputId = 'Out14-1-1',
                pattern = '(XX.XX)')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_4_Median
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -126,7 +126,7 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_4_Median <- df2_An03_01_Age_
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_5_Q1
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -139,7 +139,7 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_5_Q1 <- df2_An03_01_Age_Summ
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_6_Q3
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -152,7 +152,7 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_6_Q3 <- df2_An03_01_Age_Summ
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_7_Min
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -165,7 +165,7 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_7_Min <- df2_An03_01_Age_Sum
                OutputId = 'Out14-1-1',
                pattern = 'XX')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_8_Max
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -178,14 +178,14 @@ df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_8_Max <- df2_An03_01_Age_Sum
                OutputId = 'Out14-1-1',
                pattern = 'XX')
 
-#Combine operation datasets: 
-df3_An03_01_Age_Summ_ByTrt <- dplyr::bind_rows(df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_1_n, 
-df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_2_Mean, 
-df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_3_SD, 
-df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_4_Median, 
-df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_5_Q1, 
-df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_6_Q3, 
-df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_7_Min, 
+#Combine operation datasets:
+df3_An03_01_Age_Summ_ByTrt <- dplyr::bind_rows(df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_1_n,
+df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_2_Mean,
+df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_3_SD,
+df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_4_Median,
+df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_5_Q1,
+df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_6_Q3,
+df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_7_Min,
 df3_An03_01_Age_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_8_Max) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -207,8 +207,8 @@ df1_An03_01_Age_Comp_ByTrt <- df_An03_01_Age_Comp_ByTrt
 #Apply Data Subset ---
 df2_An03_01_Age_Comp_ByTrt <- df1_An03_01_Age_Comp_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth04_ContVar_Comp_Anova_1_pval
 # Operation name:         Analysis of variance group comparison for a continuous variable
 # Operation description:  Comparison of groups by analysis of variance (ANOVA) for a continuous variable
@@ -229,7 +229,7 @@ df3_An03_01_Age_Comp_ByTrt_Mth04_ContVar_Comp_Anova_1_pval <- data.frame(res = p
                   OperationId = 'Mth04_ContVar_Comp_Anova_1_pval',
                   OutputId = 'Out14-1-1',
                   pattern = 'X.XXXX')
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An03_01_Age_Comp_ByTrt <- dplyr::bind_rows(df3_An03_01_Age_Comp_ByTrt_Mth04_ContVar_Comp_Anova_1_pval)
 
 # Analysis An03_02_AgeGrp_Summ_ByTrt----
@@ -249,8 +249,8 @@ df1_An03_02_AgeGrp_Summ_ByTrt <- df_An03_02_AgeGrp_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An03_02_AgeGrp_Summ_ByTrt <- df1_An03_02_AgeGrp_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -263,7 +263,7 @@ df3_An03_02_AgeGrp_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An03_02_AgeGrp_
                OutputId = 'Out14-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -285,8 +285,8 @@ df3_An03_02_AgeGrp_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An03_02
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An03_02_AgeGrp_Summ_ByTrt <- dplyr::bind_rows(df3_An03_02_AgeGrp_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An03_02_AgeGrp_Summ_ByTrt <- dplyr::bind_rows(df3_An03_02_AgeGrp_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An03_02_AgeGrp_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A,
              Group2 = AGEGR1)
@@ -309,8 +309,8 @@ df1_An03_02_AgeGrp_Comp_ByTrt <- df_An03_02_AgeGrp_Comp_ByTrt
 #Apply Data Subset ---
 df2_An03_02_AgeGrp_Comp_ByTrt <- df1_An03_02_AgeGrp_Comp_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth03_CatVar_Comp_PChiSq_1_pval
 # Operation name:         Pearson's chi-square test group comparison for a categorical variable
 # Operation description:  Comparison of groups by Pearson's chi-square test for a categorical variable
@@ -325,7 +325,7 @@ df3_An03_02_AgeGrp_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval <- data.frame(res 
                   OutputId = 'Out14-1-1',
                   pattern = 'X.XXXX')
 
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An03_02_AgeGrp_Comp_ByTrt <- dplyr::bind_rows(df3_An03_02_AgeGrp_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval)
 
 # Analysis An03_03_Sex_Summ_ByTrt----
@@ -345,8 +345,8 @@ df1_An03_03_Sex_Summ_ByTrt <- df_An03_03_Sex_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An03_03_Sex_Summ_ByTrt <- df1_An03_03_Sex_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -359,7 +359,7 @@ df3_An03_03_Sex_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An03_03_Sex_Summ_B
                OutputId = 'Out14-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -381,8 +381,8 @@ df3_An03_03_Sex_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An03_03_Se
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An03_03_Sex_Summ_ByTrt <- dplyr::bind_rows(df3_An03_03_Sex_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An03_03_Sex_Summ_ByTrt <- dplyr::bind_rows(df3_An03_03_Sex_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An03_03_Sex_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A,
              Group2 = SEX)
@@ -405,8 +405,8 @@ df1_An03_03_Sex_Comp_ByTrt <- df_An03_03_Sex_Comp_ByTrt
 #Apply Data Subset ---
 df2_An03_03_Sex_Comp_ByTrt <- df1_An03_03_Sex_Comp_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth03_CatVar_Comp_PChiSq_1_pval
 # Operation name:         Pearson's chi-square test group comparison for a categorical variable
 # Operation description:  Comparison of groups by Pearson's chi-square test for a categorical variable
@@ -421,7 +421,7 @@ df3_An03_03_Sex_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval <- data.frame(res = p
                   OutputId = 'Out14-1-1',
                   pattern = 'X.XXXX')
 
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An03_03_Sex_Comp_ByTrt <- dplyr::bind_rows(df3_An03_03_Sex_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval)
 
 # Analysis An03_04_Ethnic_Summ_ByTrt----
@@ -441,8 +441,8 @@ df1_An03_04_Ethnic_Summ_ByTrt <- df_An03_04_Ethnic_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An03_04_Ethnic_Summ_ByTrt <- df1_An03_04_Ethnic_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -455,7 +455,7 @@ df3_An03_04_Ethnic_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An03_04_Ethnic_
                OutputId = 'Out14-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -477,8 +477,8 @@ df3_An03_04_Ethnic_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An03_04
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An03_04_Ethnic_Summ_ByTrt <- dplyr::bind_rows(df3_An03_04_Ethnic_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An03_04_Ethnic_Summ_ByTrt <- dplyr::bind_rows(df3_An03_04_Ethnic_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An03_04_Ethnic_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A,
              Group2 = ETHNIC)
@@ -501,8 +501,8 @@ df1_An03_04_Ethnic_Comp_ByTrt <- df_An03_04_Ethnic_Comp_ByTrt
 #Apply Data Subset ---
 df2_An03_04_Ethnic_Comp_ByTrt <- df1_An03_04_Ethnic_Comp_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth03_CatVar_Comp_PChiSq_1_pval
 # Operation name:         Pearson's chi-square test group comparison for a categorical variable
 # Operation description:  Comparison of groups by Pearson's chi-square test for a categorical variable
@@ -517,7 +517,7 @@ df3_An03_04_Ethnic_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval <- data.frame(res 
                   OutputId = 'Out14-1-1',
                   pattern = 'X.XXXX')
 
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An03_04_Ethnic_Comp_ByTrt <- dplyr::bind_rows(df3_An03_04_Ethnic_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval)
 
 # Analysis An03_05_Race_Summ_ByTrt----
@@ -537,8 +537,8 @@ df1_An03_05_Race_Summ_ByTrt <- df_An03_05_Race_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An03_05_Race_Summ_ByTrt <- df1_An03_05_Race_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -551,7 +551,7 @@ df3_An03_05_Race_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An03_05_Race_Summ
                OutputId = 'Out14-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -573,8 +573,8 @@ df3_An03_05_Race_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An03_05_R
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An03_05_Race_Summ_ByTrt <- dplyr::bind_rows(df3_An03_05_Race_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An03_05_Race_Summ_ByTrt <- dplyr::bind_rows(df3_An03_05_Race_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An03_05_Race_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A,
              Group2 = RACE)
@@ -597,8 +597,8 @@ df1_An03_05_Race_Comp_ByTrt <- df_An03_05_Race_Comp_ByTrt
 #Apply Data Subset ---
 df2_An03_05_Race_Comp_ByTrt <- df1_An03_05_Race_Comp_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth03_CatVar_Comp_PChiSq_1_pval
 # Operation name:         Pearson's chi-square test group comparison for a categorical variable
 # Operation description:  Comparison of groups by Pearson's chi-square test for a categorical variable
@@ -613,7 +613,7 @@ df3_An03_05_Race_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval <- data.frame(res = 
                   OutputId = 'Out14-1-1',
                   pattern = 'X.XXXX')
 
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An03_05_Race_Comp_ByTrt <- dplyr::bind_rows(df3_An03_05_Race_Comp_ByTrt_Mth03_CatVar_Comp_PChiSq_1_pval)
 
 # Analysis An03_06_Height_Summ_ByTrt----
@@ -633,8 +633,8 @@ df1_An03_06_Height_Summ_ByTrt <- df_An03_06_Height_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An03_06_Height_Summ_ByTrt <- df1_An03_06_Height_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -647,7 +647,7 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_1_n <- df2_An03_06_Height
                OutputId = 'Out14-1-1',
                pattern = 'XX')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_2_Mean
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -660,7 +660,7 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_2_Mean <- df2_An03_06_Hei
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_3_SD
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -673,7 +673,7 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_3_SD <- df2_An03_06_Heigh
                OutputId = 'Out14-1-1',
                pattern = '(XX.XX)')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_4_Median
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -686,7 +686,7 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_4_Median <- df2_An03_06_H
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_5_Q1
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -699,7 +699,7 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_5_Q1 <- df2_An03_06_Heigh
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_6_Q3
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -712,7 +712,7 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_6_Q3 <- df2_An03_06_Heigh
                OutputId = 'Out14-1-1',
                pattern = 'XX.X')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_7_Min
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -725,7 +725,7 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_7_Min <- df2_An03_06_Heig
                OutputId = 'Out14-1-1',
                pattern = 'XX')
 
- 
+
 # Operation ID:           Mth02_ContVar_Summ_ByGrp_8_Max
 # Operation name:         Summary by group of a continuous variable
 # Operation description:  Descriptive summary statistics across groups for a continuous variable
@@ -738,14 +738,14 @@ df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_8_Max <- df2_An03_06_Heig
                OutputId = 'Out14-1-1',
                pattern = 'XX')
 
-#Combine operation datasets: 
-df3_An03_06_Height_Summ_ByTrt <- dplyr::bind_rows(df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_1_n, 
-df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_2_Mean, 
-df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_3_SD, 
-df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_4_Median, 
-df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_5_Q1, 
-df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_6_Q3, 
-df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_7_Min, 
+#Combine operation datasets:
+df3_An03_06_Height_Summ_ByTrt <- dplyr::bind_rows(df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_1_n,
+df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_2_Mean,
+df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_3_SD,
+df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_4_Median,
+df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_5_Q1,
+df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_6_Q3,
+df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_7_Min,
 df3_An03_06_Height_Summ_ByTrt_Mth02_ContVar_Summ_ByGrp_8_Max) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -767,8 +767,8 @@ df1_An03_06_Height_Comp_ByTrt <- df_An03_06_Height_Comp_ByTrt
 #Apply Data Subset ---
 df2_An03_06_Height_Comp_ByTrt <- df1_An03_06_Height_Comp_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth04_ContVar_Comp_Anova_1_pval
 # Operation name:         Analysis of variance group comparison for a continuous variable
 # Operation description:  Comparison of groups by analysis of variance (ANOVA) for a continuous variable
@@ -789,22 +789,22 @@ df3_An03_06_Height_Comp_ByTrt_Mth04_ContVar_Comp_Anova_1_pval <- data.frame(res 
                   OperationId = 'Mth04_ContVar_Comp_Anova_1_pval',
                   OutputId = 'Out14-1-1',
                   pattern = 'X.XXXX')
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An03_06_Height_Comp_ByTrt <- dplyr::bind_rows(df3_An03_06_Height_Comp_ByTrt_Mth04_ContVar_Comp_Anova_1_pval)
 
 # combine analyses to create ARD ----
-df4 <- dplyr::bind_rows(df3_An01_05_SAF_Summ_ByTrt, 
-df3_An03_01_Age_Summ_ByTrt, 
-df3_An03_01_Age_Comp_ByTrt, 
-df3_An03_02_AgeGrp_Summ_ByTrt, 
-df3_An03_02_AgeGrp_Comp_ByTrt, 
-df3_An03_03_Sex_Summ_ByTrt, 
-df3_An03_03_Sex_Comp_ByTrt, 
-df3_An03_04_Ethnic_Summ_ByTrt, 
-df3_An03_04_Ethnic_Comp_ByTrt, 
-df3_An03_05_Race_Summ_ByTrt, 
-df3_An03_05_Race_Comp_ByTrt, 
-df3_An03_06_Height_Summ_ByTrt, 
+df4 <- dplyr::bind_rows(df3_An01_05_SAF_Summ_ByTrt,
+df3_An03_01_Age_Summ_ByTrt,
+df3_An03_01_Age_Comp_ByTrt,
+df3_An03_02_AgeGrp_Summ_ByTrt,
+df3_An03_02_AgeGrp_Comp_ByTrt,
+df3_An03_03_Sex_Summ_ByTrt,
+df3_An03_03_Sex_Comp_ByTrt,
+df3_An03_04_Ethnic_Summ_ByTrt,
+df3_An03_04_Ethnic_Comp_ByTrt,
+df3_An03_05_Race_Summ_ByTrt,
+df3_An03_05_Race_Comp_ByTrt,
+df3_An03_06_Height_Summ_ByTrt,
 df3_An03_06_Height_Comp_ByTrt)
 
  #Apply pattern format:

@@ -1,24 +1,24 @@
 
 # Programme:    Generate code to produce ARD for Out14-3-1-1
 # Output:       Overall Summary of Treatment-Emergent Adverse Events
-# Date created: 2025-03-05 17:20:51
+# Date created: 2025-03-11 15:12:10
 
 
-  
+
 
 # load libraries ----
 library(tidyverse)
 library(readxl)
 library(splitstackshape)
 library(readr)
-  
+
 # load ADaM ----
 ADSL <- read_csv('dev/examples/ADSL.csv')
 ADAE <- read_csv('dev/examples/ADAE.csv') %>%
   rename(TRT01A = TRTA)
 ADVS <- read_csv('dev/examples/ADVS.csv') %>%
   rename(TRT01A = TRTA)
-  
+
 
 # Analysis An01_05_SAF_Summ_ByTrt----
 # Apply Analysis Set ---
@@ -37,8 +37,8 @@ df1_An01_05_SAF_Summ_ByTrt <- df_An01_05_SAF_Summ_ByTrt %>%
 #Apply Data Subset ---
 df2_An01_05_SAF_Summ_ByTrt <- df1_An01_05_SAF_Summ_ByTrt
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Count_ByGrp_1_n
 # Operation name:         Count by group for a categorical variable
 # Operation description:  Count across groups for a categorical variable, based on subject occurrence
@@ -51,7 +51,7 @@ df3_An01_05_SAF_Summ_ByTrt_Mth01_CatVar_Count_ByGrp_1_n <- df2_An01_05_SAF_Summ_
                OutputId = 'Out14-3-1-1',
                pattern = '(N=XX)')
 
-#Combine operation datasets: 
+#Combine operation datasets:
 df3_An01_05_SAF_Summ_ByTrt <- dplyr::bind_rows(df3_An01_05_SAF_Summ_ByTrt_Mth01_CatVar_Count_ByGrp_1_n) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -78,8 +78,8 @@ df1_An07_01_TEAE_Summ_ByTrt <- df_An07_01_TEAE_Summ_ByTrt %>%
 df2_An07_01_TEAE_Summ_ByTrt <- df1_An07_01_TEAE_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -92,7 +92,7 @@ df3_An07_01_TEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_01_TEAE_Summ
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -114,8 +114,8 @@ df3_An07_01_TEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An07_01_T
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_01_TEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_01_TEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_01_TEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_01_TEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_01_TEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -142,8 +142,8 @@ df1_An07_02_RelTEAE_Summ_ByTrt <- df_An07_02_RelTEAE_Summ_ByTrt %>%
 df2_An07_02_RelTEAE_Summ_ByTrt <- df1_An07_02_RelTEAE_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y' & AEREL %in% 'c("POSSIBLE", "PROBABLE")')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -156,7 +156,7 @@ df3_An07_02_RelTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_02_RelTEA
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -178,8 +178,8 @@ df3_An07_02_RelTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An07_0
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_02_RelTEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_02_RelTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_02_RelTEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_02_RelTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_02_RelTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -206,8 +206,8 @@ df1_An07_03_SerTEAE_Summ_ByTrt <- df_An07_03_SerTEAE_Summ_ByTrt %>%
 df2_An07_03_SerTEAE_Summ_ByTrt <- df1_An07_03_SerTEAE_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y' & AESER == 'Y')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -220,7 +220,7 @@ df3_An07_03_SerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_03_SerTEA
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -242,8 +242,8 @@ df3_An07_03_SerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An07_0
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_03_SerTEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_03_SerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_03_SerTEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_03_SerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_03_SerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -270,8 +270,8 @@ df1_An07_04_RelSerTEAE_Summ_ByTrt <- df_An07_04_RelSerTEAE_Summ_ByTrt %>%
 df2_An07_04_RelSerTEAE_Summ_ByTrt <- df1_An07_04_RelSerTEAE_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y' & AEREL %in% 'c("POSSIBLE", "PROBABLE")' & AESER == 'Y')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -284,7 +284,7 @@ df3_An07_04_RelSerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_04_Rel
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -306,8 +306,8 @@ df3_An07_04_RelSerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An0
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_04_RelSerTEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_04_RelSerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_04_RelSerTEAE_Summ_ByTrt <- dplyr::bind_rows(df3_An07_04_RelSerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_04_RelSerTEAE_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -334,8 +334,8 @@ df1_An07_05_TEAELd2Dth_Summ_ByTrt <- df_An07_05_TEAELd2Dth_Summ_ByTrt %>%
 df2_An07_05_TEAELd2Dth_Summ_ByTrt <- df1_An07_05_TEAELd2Dth_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y' & AESDTH == 'Y')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -348,7 +348,7 @@ df3_An07_05_TEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_05_TEA
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -370,8 +370,8 @@ df3_An07_05_TEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_An0
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_05_TEAELd2Dth_Summ_ByTrt <- dplyr::bind_rows(df3_An07_05_TEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_05_TEAELd2Dth_Summ_ByTrt <- dplyr::bind_rows(df3_An07_05_TEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_05_TEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -398,8 +398,8 @@ df1_An07_06_RelTEAELd2Dth_Summ_ByTrt <- df_An07_06_RelTEAELd2Dth_Summ_ByTrt %>%
 df2_An07_06_RelTEAELd2Dth_Summ_ByTrt <- df1_An07_06_RelTEAELd2Dth_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y' & AESDTH == 'Y', AEREL == 'POSSIBLE' | AEREL == 'PROBABLE')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -412,7 +412,7 @@ df3_An07_06_RelTEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_06_
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -434,8 +434,8 @@ df3_An07_06_RelTEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_06_RelTEAELd2Dth_Summ_ByTrt <- dplyr::bind_rows(df3_An07_06_RelTEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_06_RelTEAELd2Dth_Summ_ByTrt <- dplyr::bind_rows(df3_An07_06_RelTEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_06_RelTEAELd2Dth_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -462,8 +462,8 @@ df1_An07_07_TEAELd2DoseMod_Summ_ByTrt <- df_An07_07_TEAELd2DoseMod_Summ_ByTrt %>
 df2_An07_07_TEAELd2DoseMod_Summ_ByTrt <- df1_An07_07_TEAELd2DoseMod_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y' & AEACN %in% 'c("DOSE REDUCED", "DRUG INTERRUPTED")')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -476,7 +476,7 @@ df3_An07_07_TEAELd2DoseMod_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_07
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -498,8 +498,8 @@ df3_An07_07_TEAELd2DoseMod_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_07_TEAELd2DoseMod_Summ_ByTrt <- dplyr::bind_rows(df3_An07_07_TEAELd2DoseMod_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_07_TEAELd2DoseMod_Summ_ByTrt <- dplyr::bind_rows(df3_An07_07_TEAELd2DoseMod_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_07_TEAELd2DoseMod_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
@@ -526,8 +526,8 @@ df1_An07_08_TEAELd2TrtDsc_Summ_ByTrt <- df_An07_08_TEAELd2TrtDsc_Summ_ByTrt %>%
 df2_An07_08_TEAELd2TrtDsc_Summ_ByTrt <- df1_An07_08_TEAELd2TrtDsc_Summ_ByTrt %>%
         dplyr::filter(TRTEMFL == 'Y' & AEACN == 'DRUG WITHDRAWN')
 
-#Apply Operations --- 
- 
+#Apply Operations ---
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_1_n
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -540,7 +540,7 @@ df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n <- df2_An07_08_
                OutputId = 'Out14-3-1-1',
                pattern = 'XXX')
 
- 
+
 # Operation ID:           Mth01_CatVar_Summ_ByGrp_2_pct
 # Operation name:         Summary by group of a categorical variable
 # Operation description:  Descriptive summary statistics across groups for a categorical variable, based on subject occurrence
@@ -562,21 +562,21 @@ df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct <- merge(df3_
                                                    pattern = '( XX.X)') %>%
                                             dplyr::select(-NUM, -DEN)
 
-#Combine operation datasets: 
-df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt <- dplyr::bind_rows(df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n, 
+#Combine operation datasets:
+df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt <- dplyr::bind_rows(df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_1_n,
 df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt_Mth01_CatVar_Summ_ByGrp_2_pct) %>%
       dplyr::rename(Group1 = TRT01A)
 
 
 # combine analyses to create ARD ----
-df4 <- dplyr::bind_rows(df3_An01_05_SAF_Summ_ByTrt, 
-df3_An07_01_TEAE_Summ_ByTrt, 
-df3_An07_02_RelTEAE_Summ_ByTrt, 
-df3_An07_03_SerTEAE_Summ_ByTrt, 
-df3_An07_04_RelSerTEAE_Summ_ByTrt, 
-df3_An07_05_TEAELd2Dth_Summ_ByTrt, 
-df3_An07_06_RelTEAELd2Dth_Summ_ByTrt, 
-df3_An07_07_TEAELd2DoseMod_Summ_ByTrt, 
+df4 <- dplyr::bind_rows(df3_An01_05_SAF_Summ_ByTrt,
+df3_An07_01_TEAE_Summ_ByTrt,
+df3_An07_02_RelTEAE_Summ_ByTrt,
+df3_An07_03_SerTEAE_Summ_ByTrt,
+df3_An07_04_RelSerTEAE_Summ_ByTrt,
+df3_An07_05_TEAELd2Dth_Summ_ByTrt,
+df3_An07_06_RelTEAELd2Dth_Summ_ByTrt,
+df3_An07_07_TEAELd2DoseMod_Summ_ByTrt,
 df3_An07_08_TEAELd2TrtDsc_Summ_ByTrt)
 
  #Apply pattern format:
