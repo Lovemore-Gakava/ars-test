@@ -1,40 +1,27 @@
 ---
 title: "mapping"
-format: html
+format: 
+  html: 
+    embed-resources: true
 ---
 
 ## ARS data for Reporting event
 
 1. **ARS model - schema**
-    - Defined - https://github.com/cdisc-org/analysis-results-standard/tree/main/model
+    - Defined: [Analysis Results Standard Document Home](https://wiki.cdisc.org/display/ARSP/Analysis+Results+Standard+Document+Home)
+    - https://github.com/cdisc-org/analysis-results-standard/tree/main/model
     
 2. **Map ARS data**:
     - Template: https://github.com/cdisc-org/analysis-results-standard/tree/main/utilities/python
         - convert excel to yaml: excel2yaml
     - TFL designer
         - Create mock shells, get excel, yaml, json
+        - [tfl-designer-virtual-workshop](https://www.cdisc.org/events/webinar/tfl-designer-virtual-workshop)
+        - [TFL Designer Virtual Workshop - Part II](https://www.cdisc.org/events/webinar/tfl-designer-virtual-workshop-part-ii)
+        
     - LLM
         - Use mock shells, protocol, ars model and create yaml and/json ars data
     
 3. **Validate** ARS data against the ARS schema.
 
 4. If not ARS data is not json - **convert ARS Data** to json 
-
-## Generating the ARD
-
-### For R
-
-For R use the siera package
-
-- Motivation: [www.cdisc.org](https://www.cdisc.org/sites/default/files/pdf/360i-Program-Kickoff20250218.pdf)
-
-
-### For SAS
-
-For SAS use the ARD generator
-
-- [Wallendszus_ARD-Generator_CDISC-Europe-Interchange-2024](https://www.cdisc.org/sites/default/files/2024-04/Wallendszus_ARD-Generator_CDISC-Europe-Interchange-2024.pdf)
-
-- [ard-generator](https://github.com/KarlWallendszus/ard-generator)
-
-
