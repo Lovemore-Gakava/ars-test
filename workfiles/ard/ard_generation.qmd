@@ -23,4 +23,9 @@ For SAS use the ARD generator
 
 - [ard-generator](https://github.com/KarlWallendszus/ard-generator)
 
+### Other R packages
+
+- [cards](https://github.com/insightsengineering/cards?tab=readme-ov-file)
+
+- [ards.r-sassy](https://ards.r-sassy.org/)
 
