@@ -7,23 +7,24 @@ format:
 
 ## ARS data for Reporting event
 
-1. **ARS model - schema**
+1. **✅ [ARS model - schema**
     - Defined: [Analysis Results Standard Document Home](https://wiki.cdisc.org/display/ARSP/Analysis+Results+Standard+Document+Home)
-    - https://cdisc-org.github.io/analysis-results-standard/
-    - https://github.com/cdisc-org/analysis-results-standard/tree/main/model
-    - https://www.cdisc.org/sites/default/files/2024-04/CDISC%20EU%202024%20ARS%2020240419.pdf
+    - [analysis-results-standard](https://cdisc-org.github.io/analysis-results-standard/)
+    - [schema](https://github.com/cdisc-org/analysis-results-standard/tree/main/model)
+    - [CDISC EU 2024](https://www.cdisc.org/sites/default/files/2024-04/CDISC%20EU%202024%20ARS%2020240419.pdf)
     
 2. **Map ARS data**:
-    - [Template directory](https://github.com/cdisc-org/analysis-results-standard/tree/main/utilities/python)
+    - ✅ [Template directory](https://github.com/cdisc-org/analysis-results-standard/tree/main/utilities/python)
         - convert excel to yaml: excel2yaml
-    - [TFL designer](https://tfldesigner.org/login)
+    - 🔍 [TFL designer](https://tfldesigner.org/login)
         - Create mock shells, get excel, yaml, json
         - [tfl-designer-virtual-workshop](https://www.cdisc.org/events/webinar/tfl-designer-virtual-workshop)
         - [TFL Designer Virtual Workshop - Part II](https://www.cdisc.org/events/webinar/tfl-designer-virtual-workshop-part-ii)
         
-    - LLM
+    - LLM 🚧 (Under Construction)
         - Use mock shells, protocol, ars model and create yaml and/json ars data
+        - 🚧 Note: This part is currently under development.
     
 3. **Validate** ARS data against the ARS schema.
 
-4. If not ARS data is not json - **convert ARS Data** to json 
+4. If ARS data is not in JSON format - **convert ARS Data** to JSON
